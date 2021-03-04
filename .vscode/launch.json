@@ -1,0 +1,23 @@
+{
+    // Arquivo de configuracao especifico para rodar a aplicacao diretamente no Visual Studio
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Therapie-se",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "sourceMaps": true,
+            "trace": true,
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": ["debug", "--inspect"],
+            "restart": true,
+            "console": "integratedTerminal",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceFolder}/src/app.js",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

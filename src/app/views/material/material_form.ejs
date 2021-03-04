@@ -1,0 +1,63 @@
+<%- include ('../parts/head') %>
+
+<body data-spy="scroll" data-target="#navSection" data-offset="100">
+    <!--  NAVBAR  -->
+    <%- include ('../parts/navbar/NavbarProfissional') %>
+    <!--  SUBNAVBAR  -->
+    <%- include ('../parts/navbar/subNavbar') %>
+    <!--  MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+        <!--  SIDEBAR  -->
+        <%- include ('../parts/sidebarProfissional') %>
+        <!--  CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div id="tooltips" class="col-lg-12 layout-spacing col-md-12">
+                            <div class="widget-content widget-content-area">
+                                <%if(page.name == "Criar") { %>
+                                    <form name="form" class="needs-validation" method="post"
+                                        action="/material/add/<%= profissional.id %>"
+                                        novalidate action="javascript:void(0);">
+                                        <%- include ('material_fields') %>
+                                    </form>
+                                <% } %>
+
+                                <%if(page.name == "Editar") { %>
+                                    <form name="form" class="needs-validation" method="post"
+                                        action="/material/<%= material[0].id %>/edit/<%= profissional.id %>?_method=PUT"
+                                        novalidate action="javascript:void(0);">
+                                        <%- include ('material_fields') %>
+                                    </form>
+
+                                    <form id="form-delete" 
+                                        action="/material/delete/<%= material[0].id %>?_method=DELETE"
+                                        method="POST">
+                                        <button class="btn btn-delete mt-2" type="submit">Deletar</button>
+                                    </form>
+    
+                                    <script> //Posicionar melhor
+                                        const formDelete = document.querySelector("#form-delete")
+                                        formDelete.addEventListener("submit", function (event) {
+                                            const confirmation = confirm("Deseja deletar?");
+                                            if(!confirmation) {
+                                                event.preventDefault();
+                                            }
+                                        })
+                                    </script>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  GLOBAL MANDATORY SCRIPTS  -->
+    <%- include ('../parts/scripts') %>
+</body>
+
+</html>

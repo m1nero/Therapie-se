@@ -1,0 +1,38 @@
+<div class="form-row">
+    <h4><%= page.name %> Material Apoio</h4>
+</div>
+
+<div class="form-row">
+    <div class="col-md-12 mb-5">
+        <label for="validationTooltip02">URL Imagem</label>
+        <input type="url" class="form-control" id="validationTooltip02"
+            placeholder="http://" name="url_imagem" <% if(page.name == "Editar") { %>
+            value="<%= material[0].url_imagem %>" <% } %>>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-md-12 mb-5">
+        <label for="validationTooltip02">Id Video Youtube</label>
+        <input type="text" class="form-control" id="validationTooltip02"
+            name="video_id" <% if(page.name == "Editar") { %>
+            value="<%= material[0].video_id %>" <% } %>>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-md-12 mb-5">
+        <label for="validationTooltip02">Texto Motivacional</label>
+        <input type="text" class="form-control" id="validationTooltip02"
+             name="txt_motivacional" <% if(page.name == "Editar") { %>
+            value="<%= material[0].txt_motivacional %>" <% } %>>
+    </div>
+</div>
+
+<% if(page.name == "Editar") { %>
+    <button class="btn btn-secondary mt-2" type="submit">Editar</button>
+<% } %>
+
+<% if(page.name == "Criar" ) { %>
+    <button class="btn btn-primary mt-2" id="store-button" type="submit" onclick="disableButton()">Gravar</button>
+<% } %>

@@ -1,0 +1,32 @@
+{
+  "name": "Therapie-se",
+  "version": "1.0.0",
+  "description": "Aproximar pacientes e psicologos",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "author": "B&B Corporation",
+  "license": "MIT",
+  "dependencies": {
+    "D": "^1.0.0",
+    "axios": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "browser-sync": "^2.26.12",
+    "connect-session-sequelize": "^7.0.4",
+    "debug": "^4.1.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.4",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sequelize-cli": "^6.2.0"
+  }
+}

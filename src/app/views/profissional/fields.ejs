@@ -1,0 +1,140 @@
+<div class="form">
+    <div class="form-row">
+        <h4><%= page.name %> Profissional</h4>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltip01">Nome</label>
+
+            <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" name="nome" 
+            <% if(page.name == "Editar") { %> value="<%= profissional.nome %>" <% } %> required>
+
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltipUsername">Email</label>
+            <div class="input-group">
+                <input type="email" class="form-control" id="validationTooltipUsername" placeholder="Email"
+                    aria-describedby="validationTooltipUsernamePrepend" name="email" 
+                    <% if(page.name == "Editar") { %> value="<%= profissional.email %>" <% } %> required>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltipUsername">CRP/CNPJ</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="validationTooltip02" placeholder="CRP/CNPJ"
+                    aria-describedby="validationTooltipUsernamePrepend" name="crp_cnpj" 
+                    <% if(page.name == "Editar") { %> value="<%= profissional.crp_cnpj %>" <% } %> required>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6 mb-5">
+            <label for="validationTooltip02">Endereço</label>
+            <input type="text" class="form-control" id="validationTooltip03"
+                placeholder="Rua ABC nº X" name="endereco" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.endereco %>" <% } %> required>
+
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-5">
+            <label for="validationTooltip02">Cidade</label>
+            <input type="text" class="form-control" id="validationTooltip03"
+                placeholder="Cidade" name="cidade" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.cidade %>" <% } %> required>
+
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-5">
+            <label for="validationTooltip02">Estado</label>
+            <input type="text" class="form-control" id="validationTooltip04"
+                placeholder="Estado" name="estado" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.estado %>" <% } %> required>
+
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="col-md-6 mb-5">
+            <label for="validationTooltip02">CEP</label>
+            <input type="text" class="form-control" id="validationTooltip05"
+                placeholder="XXXXX-XXX" name="cep" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.cep %>" <% } %>
+                required>
+    
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-5">
+            <label for="validationTooltip02">Telefone</label>
+            <input type="text" class="form-control" id="6"
+                placeholder="(XX) XXXX-XXXX" name="telefone" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.telefone %>" <% } %>required>
+    
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="col-md-12 mb-5">
+            <label for="validationTooltip02">Url Foto de Perfil</label>
+            <input type="text" class="form-control" id="validationTooltip07"
+                placeholder="https://" name="url" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.url %>" <% } %>required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6 mb-5">
+            <label for="validationTooltip03">Senha</label>
+
+            <input type="password" class="form-control" id="validationTooltip03" placeholder="Senha" name="senha"
+                required>
+
+            <div class="invalid-tooltip">
+                Fill all blanks!
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-5">
+            <label for="validationTooltip03">Repita senha</label>
+
+            <input type="password" class="form-control" id="validationTooltip03" placeholder="Digite sua senha novamente"
+                name="senhaRepetida" onblur="validar()" required>
+
+            <div class="invalid-tooltip">
+                Fill all blanks!
+            </div>
+        </div>
+    </div>
+    
+    <% if (page.name == "Criar") { %>
+        <p class="signup-link">Já tem cadastro? <a href="/login">Entrar</a></p>
+        <button class="btn btn-primary mt-2" id="store-button" type="submit">Gravar</button>
+    <% } %>
+
+    <% if (page.name == "Editar") { %>
+        <button class="btn btn-secondary mt-2" type="submit">Editar</button>
+    <% } %>
+</div>

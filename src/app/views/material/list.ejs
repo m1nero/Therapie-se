@@ -1,0 +1,68 @@
+<%- include ('../parts/head') %>
+
+<body>
+    <!--  NAVBAR  -->
+    <%- include ('../parts/navbar/NavbarProfissional') %>
+    <!--  SUBNAVBAR  -->
+    <%- include ('../parts/navbar/subNavbar') %>
+    <!--  MAIN CONTAINER  -->
+    <div class="main-container" id="container">
+        <div class="overlay"></div>
+        <div class="search-overlay"></div>
+        <!--  SIDEBAR  -->
+        <%- include ('../parts/sidebarProfissional') %>
+        <!--  CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+                <div class="row layout-top-spacing">
+                    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                        <div class="widget-content widget-content-area br-6">
+                            <div class="table-responsive mb-4 mt-4">
+                                <table class="multi-table table table-striped table-bordered table-hover non-hover"
+                                    style="width:100%">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>Imagem</th>
+                                            <th>Video</th>
+                                            <th>Texto</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <% for (var i = 0; i < materiais.length;  i++ ) { %>
+                                        <tr class="text-center">
+                                            <td><%= materiais[i].url_imagem %></td>
+                                            <td><%= materiais[i].video_id %></td>
+                                            <td><%= materiais[i].txt_motivacional %></td>
+
+                                            <td class="text-center">
+                                                <a href="/material/<%= materiais[i].id %>/edit/<%= profissional.id %>">
+                                                    Editar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+
+                                    <tfoot>
+                                        <tr class="text-center">
+                                            <th>Imagem</th>
+                                            <th>Video</th>
+                                            <th>Texto</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  GLOBAL MANDATORY SCRIPTS  -->
+    <%- include ('../parts/scripts') %>
+</body>
+
+</html>
