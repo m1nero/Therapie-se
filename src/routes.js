@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 
+//test commit
 const indexController = require('./app/controllers/indexController');
 const pacienteController = require('./app/controllers/pacienteController');
 const profissionalController = require('./app/controllers/profissionalController');
