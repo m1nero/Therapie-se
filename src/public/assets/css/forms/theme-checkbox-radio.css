@@ -8,7 +8,6 @@
 			@Import	Mixins
 	===============================
 */
-
 /*----------Theme checkbox---------*/
 .new-control {
   position: relative;
@@ -38,7 +37,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #515365;
+    background-color: #e0e6ed;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
@@ -181,7 +180,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #515365;
+    background-color: #e0e6ed;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;

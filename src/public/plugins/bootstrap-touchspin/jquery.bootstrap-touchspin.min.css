@@ -34,7 +34,6 @@
   bottom: 0; }
 
 .bootstrap-touchspin .input-group-addon[class*="btn-"] .input-group-text {
-  color: #fff;
   background-color: transparent;
   border: none; }
 

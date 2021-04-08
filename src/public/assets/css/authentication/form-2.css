@@ -16,7 +16,7 @@ body {
   overflow: auto;
   margin: 0;
   padding: 0;
-  background-color: #0e1726; }
+  background-color: #fff; }
 
 .form-form {
   width: 50%;
@@ -43,15 +43,16 @@ body {
       display: block;
       width: 100%;
       padding: 25px;
-      background: #060818;
+      background: #fff;
       text-align: center;
       border-radius: 15px;
-      -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
+      border: 1px solid #e0e6ed;
+      -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
+      -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06); }
       .form-form .form-container .form-content h1 {
         font-size: 32px;
-        color: #bfc9d4; }
+        color: #3b3f5c; }
       .form-form .form-container .form-content > p {
         font-size: 13px;
         color: #888ea8;
@@ -64,19 +65,20 @@ body {
       height: 52px;
       border-radius: 50%;
       margin-right: 15px;
-      border: 4px solid rgba(59, 63, 92, 0.25); }
+      border: 4px solid #e0e6ed; }
     .form-form .form-form-wrap .user-meta div {
       align-self: center; }
     .form-form .form-form-wrap .user-meta p {
       font-size: 31px;
-      color: #bfc9d4;
+      color: #3b3f5c;
       margin-bottom: 0; }
   .form-form .form-form-wrap h1 .brand-name {
-    color: #bfc9d4;
+    color: #3b3f5c;
     font-weight: 600; }
   .form-form .form-form-wrap p.signup-link {
     font-size: 14px;
-    color: #bfc9d4;
+    color: #3b3f5c;
+    font-weight: 700;
     margin-bottom: 15px;
     text-align: center;
     margin-top: 50px; }
@@ -89,7 +91,7 @@ body {
     .form-form .form-form-wrap p.signup-link.recovery {
       margin-top: 0; }
     .form-form .form-form-wrap p.signup-link a {
-      color: #009688;
+      color: #1b55e2;
       border-bottom: 1px solid; }
   .form-form .form-form-wrap form .field-wrapper {
     width: 100%; }
@@ -101,25 +103,25 @@ body {
         border: 1px solid #000; }
     .form-form .form-form-wrap form .field-wrapper.toggle-pass p {
       font-weight: 600;
-      color: #bfc9d4;
+      color: #3b3f5c;
       margin-bottom: 0; }
     .form-form .form-form-wrap form .field-wrapper .logged-in-user-name {
       font-size: 37px;
-      color: #bfc9d4; }
+      color: #3b3f5c; }
     .form-form .form-form-wrap form .field-wrapper label {
       font-size: 10px;
       font-weight: 700;
-      color: #bfc9d4;
+      color: #3b3f5c;
       margin-bottom: 8px; }
     .form-form .form-form-wrap form .field-wrapper.terms_condition {
       margin-bottom: 20px; }
       .form-form .form-form-wrap form .field-wrapper.terms_condition label {
         font-size: 14px;
-        color: #009688;
+        color: #888ea8;
         padding-left: 31px;
         font-weight: 100; }
       .form-form .form-form-wrap form .field-wrapper.terms_condition a {
-        color: #bfc9d4; }
+        color: #1b55e2; }
     .form-form .form-form-wrap form .field-wrapper svg.feather-user {
       top: 53px; }
     .form-form .form-form-wrap form .field-wrapper svg.feather-lock {
@@ -152,7 +154,7 @@ body {
       width: 100%;
       -ms-transition: all 0.2s ease-in-out 0s;
       transition: all 0.2s ease-in-out 0s;
-      color: #009688;
+      color: #3b3f5c;
       font-weight: 600;
       font-size: 16px;
       padding: 13px 35px 13px 46px; }
@@ -174,8 +176,8 @@ body {
       margin-bottom: 8px; }
     .form-form .form-form-wrap form .field-wrapper .n-chk .new-control-indicator {
       top: 2px;
-      border: 1px solid #515365;
-      background-color: #515365; }
+      border: 1px solid #bfc9d4;
+      background-color: #f1f2f3; }
       .form-form .form-form-wrap form .field-wrapper .n-chk .new-control-indicator:after {
         top: 54%; }
 
@@ -192,14 +194,13 @@ body {
   .form-form .form-form-wrap form .social a {
     background: transparent;
     box-shadow: none;
-    border: 1px solid #1b2e4b;
+    border: 1px solid #e0e6ed;
     padding: 12px 10px;
-    width: 181px;
-    color: #888ea8; }
+    width: 181px; }
     .form-form .form-form-wrap form .social a.social-fb {
       margin-right: 15px; }
       .form-form .form-form-wrap form .social a.social-fb svg, .form-form .form-form-wrap form .social a.social-fb .brand-name {
-        color: #2196f3; }
+        color: #1b55e2; }
 
 @media (max-width: 991px) {
   .form-form {

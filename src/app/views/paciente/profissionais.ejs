@@ -1,125 +1,91 @@
 <%- include ('../parts/head') %>
 
 <body>
-    <!--  NAVBAR  -->
-    <% if(page.user == "Paciente") { %>
-        <%- include ('../parts/navbar/Navbar') %>
-    <% } %> 
+  <!--  NAVBAR  -->
+  <%- include ('../parts/navbar/Navbar') %>
+  <!--  SUBNAVBAR  -->
+  <%- include ('../parts/navbar/subNavbar') %>
+  <!--  BEGIN MAIN CONTAINER  -->
+  <div class="main-container" id="container">
+    <div class="overlay"></div>
+    <div class="search-overlay"></div>
+    <!--  BEGIN SIDEBAR  -->
+    <%- include ('../parts/sidebar') %>
+    <!--  BEGIN CONTENT AREA  -->
+    <div id="content" class="main-content">
+      <div class="layout-px-spacing">
+        <div class="row layout-spacing layout-top-spacing" id="cancel-row">
+          <div class="col-lg-12">
+            <div class="widget-content searchable-container list">
 
-    <% if(page.user == "Profissional") { %>
-        <%- include ('../parts/navbar/NavbarProfissional') %>
-    <% } %> 
-
-    <!--  SUBNAVBAR  -->
-    <%- include ('../parts/navbar/subNavbar') %>
-    <!--  BEGIN MAIN CONTAINER  -->
-    <div class="main-container" id="container">
-
-        <div class="overlay"></div>
-        <div class="search-overlay"></div>
-
-        <!--  BEGIN SIDEBAR  -->
-        <% if(page.user == "Paciente") { %>
-            <%- include ('../parts/sidebar') %>
-        <% } %>
-
-        <% if(page.user == "Profissional") { %>
-            <%- include ('../parts/sidebarProfissional') %>
-        <% } %> 
-
-        <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
-            <div class="layout-px-spacing">
-                <div class="row layout-spacing layout-top-spacing" id="cancel-row">
-                    <div class="col-lg-12">
-                        <div class="widget-content searchable-container list">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-5 col-md-5 col-sm-7 filtered-list-search layout-spacing align-self-center">
-                                    <form class="form-inline my-2 my-lg-0">
-                                        <div class="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                                            <input type="text" class="form-control product-search" id="input-search" placeholder="Pesquisar profissionais/ clinicas">
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="col-xl-8 col-lg-7 col-md-7 col-sm-5 text-sm-right text-center layout-spacing align-self-center">
-                                    <div class="d-flex justify-content-sm-end justify-content-center">
-                                        <div class="switch align-self-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list view-list active-view"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid view-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="searchable-items list">
-                                <% for (var i = 0; i < profissionais.length;  i++ ) { %>
-                                    <div class="items">
-                                        <div class="item-content">
-                                            <div class="user-profile">
-                                                <img src="<%= profissionais[i].url %>" width="225px" height="225px" alt="avatar">
-                                                <div class="user-meta-info">
-                                                    <p class="user-name" data-name="<%= profissionais[i].nome %>"><%= profissionais[i].nome %></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="user-email">
-                                                <p class="info-title">Email: </p>
-                                                <p class="usr-email-addr" data-email="<%= profissionais[i].email %>"><%= profissionais[i].email %></p>
-                                            </div>
-
-                                            <div class="user-location">
-                                                <p class="info-title">Endereço: </p>
-                                                <p class="usr-location" data-location="<%= profissionais[i].endereco %>"><%= profissionais[i].endereco %></p>
-                                            </div>
-
-                                            <div class="user-location">
-                                                <p class="info-title">Cidade: </p>
-                                                <p class="usr-location" data-location="<%= profissionais[i].cidade %>"><%= profissionais[i].cidade %></p>
-                                            </div>
-
-                                            <div class="user-location">
-                                                <p class="info-title">Estado: </p>
-                                                <p class="usr-location" data-location="<%= profissionais[i].estado %>"><%= profissionais[i].estado %></p>
-                                            </div>
-
-                                            <div class="user-phone">
-                                                <p class="info-title">Telefone: </p>
-                                                <p class="usr-ph-no" data-phone="<%= profissionais[i].telefone %>"><%= profissionais[i].telefone %></p>
-                                            </div>
-
-                                            <div class="user-phone">
-                                                <p class="info-title">CEP: </p>
-                                                <p class="usr-ph-no" data-phone="<%= profissionais[i].cep %>"><%= profissionais[i].cep %></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <% } %>
-                            </div>
-                        </div>
+              <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-5 col-sm-7 filtered-list-search layout-spacing align-self-center">
+                  <form class="form-inline my-2 my-lg-0">
+                    <div class="">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      <input type="text" class="form-control product-search" id="input-search" placeholder="Pesquisar profissionais/ clinicas">
                     </div>
+                  </form>
                 </div>
+              </div>
+
+              <div class="searchable-items grid">
+
+                <% for (var i = 0; i < profissionais.length;  i++ ) { %>
+                  <div class="items">
+                    <div class="item-content">
+
+                      <div class="user-profile">
+                        <img src="<%= profissionais[i].url %>" width="225px" height="225px" alt="avatar">
+                        <div class="user-meta-info">
+                          <p class="user-name" data-name="<%= profissionais[i].nome %>"><%= profissionais[i].nome %></p>
+                        </div>
+                      </div>
+
+                      <div class="user-email">
+                        <p class="info-title">Email: </p>
+                        <p class="usr-email-addr" data-email="<%= profissionais[i].email %>"><%= profissionais[i].email %></p>
+                      </div>
+
+                      <div class="user-location">
+                        <p class="info-title">Endereço: </p>
+                        <p class="usr-location" data-location="<%= profissionais[i].endereco %>"><%= profissionais[i].endereco %>, <%= profissionais[i].cidade %> - <%= profissionais[i].estado %></p>
+                      </div>
+
+                      <div class="user-phone">
+                        <p class="info-title">Telefone: </p>
+                        <p class="usr-ph-no" data-phone="<%= profissionais[i].telefone %>"><%= profissionais[i].telefone %></p>
+                      </div>
+
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+
             </div>
+          </div>
         </div>
-        <!--  END CONTENT AREA  -->
+      </div>
     </div>
-        <!-- END MAIN CONTAINER -->
-    
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="/assets/js/libs/jquery-3.1.1.min.js"></script>
-    <script src="/bootstrap/js/popper.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="/assets/js/app.js"></script>    
-    <script>
-        $(document).ready(function() {
-            App.init();
-        });
-    </script>
-    <script src="/assets/js/custom.js"></script>
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="/assets/js/apps/contact.js"></script>
+    <!--  END CONTENT AREA  -->
+  </div>
+  <!-- END MAIN CONTAINER -->
+
+  <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+  <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script src="assets/js/app.js"></script>    
+  <script>
+    $(document).ready(function() {
+      App.init();
+    });
+  </script>
+
+  <script src="assets/js/custom.js"></script>
+  <!-- END GLOBAL MANDATORY SCRIPTS -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="assets/js/apps/contact.js"></script>
 </body>
 </html>

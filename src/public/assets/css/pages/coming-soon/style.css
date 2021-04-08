@@ -16,7 +16,7 @@ body {
   overflow: auto;
   margin: 0;
   padding: 0;
-  background: #060818; }
+  background: #fff; }
 
 .coming-soon-container {
   display: flex; }
@@ -46,7 +46,7 @@ body {
     font-size: 40px;
     margin-top: 30px;
     font-weight: 700;
-    color: #bfc9d4;
+    color: #1b55e2;
     margin-bottom: 0;
     text-shadow: 0px 5px 4px rgba(31, 45, 61, 0.101961); }
   .coming-soon-cont .coming-soon-content > p:not(.terms-conditions) {
@@ -58,7 +58,7 @@ body {
     display: flex; }
     .coming-soon-cont #timer .days, .coming-soon-cont #timer .hours, .coming-soon-cont #timer .min {
       padding: 28px 0;
-      background: #009688;
+      background: #1b55e2;
       color: #fff;
       border-radius: 4px;
       font-weight: 600;
@@ -70,7 +70,7 @@ body {
       margin-right: 15px; }
     .coming-soon-cont #timer .sec {
       padding: 28px 0;
-      background: #009688;
+      background: #1b55e2;
       color: #fff;
       border-radius: 4px;
       font-weight: 600;
@@ -94,8 +94,7 @@ body {
     font-size: 21px;
     font-weight: 700;
     margin-top: 75px;
-    margin-bottom: 40px;
-    color: #bfc9d4; }
+    margin-bottom: 40px; }
   .coming-soon-cont .coming-soon-wrap form .field-wrapper {
     position: relative;
     display: flex;
@@ -103,46 +102,46 @@ body {
     .coming-soon-cont .coming-soon-wrap form .field-wrapper svg {
       position: absolute;
       top: 11px;
-      color: #009688;
-      fill: rgba(0, 150, 136, 0.09);
+      color: #1b55e2;
+      fill: rgba(27, 85, 226, 0.239216);
       left: 8px; }
     .coming-soon-cont .coming-soon-wrap form .field-wrapper input {
       padding: 10px 97px 10px 45px; }
       .coming-soon-cont .coming-soon-wrap form .field-wrapper input::-webkit-input-placeholder, .coming-soon-cont .coming-soon-wrap form .field-wrapper input::-ms-input-placeholder, .coming-soon-cont .coming-soon-wrap form .field-wrapper input::-moz-placeholder {
         color: #d3d3d3;
         font-size: 14px; }
+      .coming-soon-cont .coming-soon-wrap form .field-wrapper input:focus {
+        border-bottom: 1px solid #1b55e2; }
     .coming-soon-cont .coming-soon-wrap form .field-wrapper button.btn {
       align-self: center;
       position: absolute;
       right: 0;
       padding: 10px 17px;
-      border-bottom-left-radius: 20px;
-      background: #009688;
-      border-color: #009688; }
+      border-bottom-left-radius: 20px; }
       .coming-soon-cont .coming-soon-wrap form .field-wrapper button.btn:hover {
         transform: none; }
   .coming-soon-cont .social {
     text-align: center;
-    color: #009688;
+    color: #1b55e2;
     margin: 45px 0 0 0; }
     .coming-soon-cont .social li {
       margin: 0; }
       .coming-soon-cont .social li:not(:last-child) {
         margin-right: 10px;
         padding-right: 10px;
-        border-right: 2px solid #3b3f5c; }
+        border-right: 2px solid #d3d3d3; }
     .coming-soon-cont .social svg {
-      color: #009688;
+      color: #1b55e2;
       width: 20px;
       height: 20px; }
   .coming-soon-cont .terms-conditions {
     max-width: 480px;
     margin: 0 auto;
-    color: #bfc9d4;
+    color: #3b3f5c;
     font-weight: 600;
     margin-top: 70px; }
     .coming-soon-cont .terms-conditions a {
-      color: #009688;
+      color: #1b55e2;
       font-weight: 700; }
 
 .coming-soon-image {
@@ -170,7 +169,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0e1726;
+    background-color: #060818;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

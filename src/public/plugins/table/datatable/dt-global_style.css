@@ -9,9 +9,9 @@
 	===============================
 */
 .widget-content-area {
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06); }
 
 .no-content:before, .no-content:after {
   display: none !important; }
@@ -23,16 +23,15 @@
   border-radius: 50%; }
 
 .table > thead {
-  border-top: 1px solid #191e3a;
-  border-bottom: 1px solid #191e3a; }
+  border-top: 1px solid #e0e6ed;
+  border-bottom: 1px solid #e0e6ed; }
 
 table.dataTable {
   border-collapse: separate;
   border-spacing: 0 5px;
   margin-top: 8px !important;
   margin-bottom: 50px !important;
-  border-collapse: collapse !important;
-  background: transparent; }
+  border-collapse: collapse !important; }
   table.dataTable thead .sorting:before, table.dataTable thead .sorting:after {
     opacity: 1;
     color: #d3d3d3; }
@@ -54,18 +53,17 @@ table.dataTable {
 .table > tbody:before {
   line-height: 1em;
   content: "_";
-  color: transparent;
+  color: white;
   display: block; }
 
 .table > tbody tr {
   border-radius: 4px;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
-  border-bottom: 1px solid #191e3a;
-  background: transparent !important; }
+  border-bottom: 1px solid #e0e6ed; }
 
 .table > thead > tr > th {
-  color: #009688;
+  color: #1b55e2;
   font-weight: 700;
   font-size: 13px;
   border: none;
@@ -96,9 +94,9 @@ table.dataTable {
 div.dataTables_wrapper div.dataTables_info {
   padding-top: 0.85em;
   white-space: normal;
-  color: #009688;
+  color: #1b55e2;
   font-weight: 600;
-  border: 1px solid #191e3a;
+  border: 1px solid #e0e6ed;
   display: inline-block;
   padding: 10px 16px;
   border-radius: 6px;
@@ -121,11 +119,8 @@ div.dataTables_wrapper div.dataTables_filter svg {
   -webkit-box-shadow: 2px 5px 17px 0 rgba(31, 45, 61, 0.1);
   box-shadow: 2px 5px 17px 0 rgba(31, 45, 61, 0.1);
   border-radius: 6px;
-  padding: 8px 30px 8px 14px;
-  border: 1px solid #1b2e4b;
-  color: #009688;
-  font-size: 15px;
-  background: #1b2e4b; }
+  border: 1px solid #e0e6ed;
+  padding: 8px 30px 8px 14px; }
 
 div.dataTables_wrapper div.dataTables_filter input {
   width: 150px; }
@@ -137,10 +132,7 @@ div.dataTables_wrapper div.dataTables_filter input {
   -webkit-appearance: none;
   /* Safari and Chrome */
   appearance: none;
-  background: #1b2e4b url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23bfc9d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") 49px 12px no-repeat;
-  border: 1px solid #1b2e4b;
-  color: #009688;
-  border-radius: 6px; }
+  background: #fff url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23d3d3d3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") 50px 9px no-repeat; }
 
 div.dataTables_wrapper div.dataTables_paginate {
   margin: 0;
@@ -162,14 +154,9 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   margin: 3px 0; }
 
 .page-item.disabled .page-link {
-  background: #191e3a; }
-
-.page-item .page-link:hover {
-  background: #191e3a;
-  color: #bfc9d4; }
-
-.page-item.disabled .page-link svg {
-  color: #acb0c3; }
+  background: #f1f2f3; }
+  .page-item.disabled .page-link svg {
+    color: #acb0c3; }
 
 .page-item:first-child .page-link, .page-item:last-child .page-link {
   border-radius: 50%;
@@ -178,7 +165,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
     width: 17px; }
 
 .page-item.active .page-link {
-  background-color: #009688; }
+  background-color: #1b55e2; }
 
 #alter_pagination_next a, #alter_pagination_previous a {
   border-radius: 50%;

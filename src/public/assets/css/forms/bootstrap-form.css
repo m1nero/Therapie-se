@@ -17,8 +17,6 @@ body {
   font-weight: 600; }
 
 .form-control {
-  margin-top: 20px;
-
   border: 1px solid #ebedf2;
   border-radius: 4px;
   color: #F49499; }

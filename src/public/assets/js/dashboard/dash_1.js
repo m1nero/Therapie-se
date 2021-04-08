@@ -1,9 +1,5 @@
 try {
 
-  Apex.tooltip = {
-    theme: 'dark'
-  }
-
 /*
     ==============================
     |    @Options Charts Script   |
@@ -248,7 +244,7 @@ var options1 = {
     floating: false,
     style: {
       fontSize: '25px',
-      color:  '#bfc9d4'
+      color:  '#0e1726'
     },
   },
   stroke: {
@@ -300,7 +296,7 @@ var options1 = {
     }
   },
   grid: {
-    borderColor: '#191e3a',
+    borderColor: '#e0e6ed',
     strokeDashArray: 5,
     xaxis: {
         lines: {
@@ -416,7 +412,7 @@ var options = {
               show: true,
               fontSize: '26px',
               fontFamily: 'Nunito, sans-serif',
-              color: '#bfc9d4',
+              color: '20',
               offsetY: 16,
               formatter: function (val) {
                 return val
@@ -440,7 +436,6 @@ var options = {
     stroke: {
       show: true,
       width: 25,
-      colors: '#0e1726'
     },
     series: [985, 737, 270],
     labels: ['Apparel', 'Electronic', 'Others'],

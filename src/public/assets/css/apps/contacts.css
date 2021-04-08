@@ -13,7 +13,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  background: rgba(25, 30, 58, 0.188235);
+  background: rgba(136, 142, 168, 0.211765);
   width: 100%;
   height: 183px;
   z-index: -1; }
@@ -45,8 +45,11 @@
 
 .filtered-list-search form input {
   padding: 6px 27px 6px 15px;
+  color: #d3d3d3;
   border: none;
-  width: 100% !important; }
+  box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
+  width: 100% !important;
+  background-color: #fff; }
   .filtered-list-search form input:focus {
     border-color: #d3d3d3; }
   .filtered-list-search form input::-webkit-input-placeholder {
@@ -66,35 +69,36 @@
   text-align: right; }
   .searchable-container .switch .view-grid, .searchable-container .switch .view-list {
     padding: 10px;
-    background: #1b2e4b;
+    background: #fff;
     border-radius: 5px;
     cursor: pointer;
-    color: #888ea8;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    color: #515365;
+    box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
     width: 43px;
     height: 41px;
     fill: rgba(0, 23, 55, 0.08); }
 
 .searchable-container #btn-add-contact {
   padding: 9px;
-  background: #1b2e4b;
+  background: #ffffff;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 35px;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
   width: 43px;
   height: 41px;
-  color: #009688;
+  color: #1b55e2;
   fill: rgba(27, 85, 226, 0.239216); }
   .searchable-container #btn-add-contact:hover {
-    color: #888ea8;
+    color: #515365;
     fill: rgba(0, 23, 55, 0.08); }
 
 .modal-backdrop {
-  background-color: #515365; }
+  background-color: #ebedf2; }
 
 .searchable-container .modal-content {
-  border: none; }
+  border: none;
+  box-shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.2); }
   .searchable-container .modal-content svg.close {
     position: absolute;
     right: -7px;
@@ -142,10 +146,10 @@
   border: none;
   padding: 0 15px 14px 15px; }
   .searchable-container .modal-footer .btn[data-dismiss="modal"] {
-    background-color: #1b2e4b;
-    color: #bfc9d4;
+    background-color: #fff;
+    color: #1b55e2;
     font-weight: 700;
-    border: 1px solid #1b2e4b;
+    border: 1px solid #e8e8e8;
     padding: 10px 25px; }
     .searchable-container .modal-footer .btn[data-dismiss="modal"] svg {
       font-size: 11px;
@@ -161,11 +165,11 @@
     background-color: #009688;
     color: #fff;
     font-weight: 600;
-    border: 1px solid #009688;
+    border: 1px solid #e0e6ed;
     padding: 10px 25px; }
 
 .searchable-container .switch .view-grid:hover, .searchable-container .switch .view-list:hover, .searchable-container .switch .active-view {
-  color: #009688;
+  color: #1b55e2;
   fill: rgba(27, 85, 226, 0.239216); }
 
 .searchable-container .searchable-items.list .items.items-header-section h4 {
@@ -173,8 +177,7 @@
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 0;
-  margin-left: 39px;
-  color: #bfc9d4; }
+  margin-left: 39px; }
 
 .searchable-container .searchable-items.list .items.items-header-section .n-chk {
   display: inline-block; }
@@ -190,14 +193,14 @@
   min-width: 0;
   word-wrap: break-word;
   justify-content: space-between;
-  background: #0e1726;
+  background: #fff;
   margin-bottom: 8px;
   border-radius: 6px;
   padding: 13px 18px;
   width: 100%;
   min-width: 767px;
   transition: all 0.35s ease;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12); }
 
 .searchable-container .searchable-items.list .items:not(.items-header-section) .item-content:hover {
   -webkit-transform: translateY(0) scale(1.03);
@@ -214,7 +217,7 @@
 
 .searchable-container .searchable-items.list .items .user-meta-info .user-name {
   margin-bottom: 0;
-  color: #bfc9d4;
+  color: #3b3f5c;
   font-weight: 600;
   font-size: 15px; }
 
@@ -255,19 +258,19 @@
   .searchable-container .searchable-items.list .items .action-btn .delete-multiple {
     margin-right: 5px;
     cursor: pointer;
-    color: #bfc9d4;
+    color: #515365;
     width: 20px;
     fill: rgba(27, 85, 226, 0.239216); }
     .searchable-container .searchable-items.list .items .action-btn .delete-multiple:hover {
-      color: #009688; }
+      color: #1b55e2; }
   .searchable-container .searchable-items.list .items .action-btn .edit, .searchable-container .searchable-items.list .items .action-btn .delete {
     margin-right: 5px;
     cursor: pointer;
-    color: #bfc9d4;
+    color: #515365;
     width: 20px;
     fill: rgba(27, 85, 226, 0.239216); }
   .searchable-container .searchable-items.list .items .action-btn .edit:hover, .searchable-container .searchable-items.list .items .action-btn .delete:hover {
-    color: #009688; }
+    color: #1b55e2; }
 
 .searchable-items.grid {
   display: -ms-flexbox;
@@ -296,7 +299,7 @@
   padding-right: 15px;
   padding-left: 15px; }
   .searchable-container .searchable-items.grid .items .item-content {
-    background-color: #0e1726;
+    background-color: #fff;
     padding: 13px 18px;
     -webkit-box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
     box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
@@ -316,7 +319,7 @@
       font-size: 21px;
       font-weight: 600;
       margin-bottom: 0;
-      color: #009688; }
+      color: #2196f3; }
     .searchable-container .searchable-items.grid .items .user-meta-info .user-work {
       font-weight: 700;
       font-size: 13px; }
@@ -327,10 +330,10 @@
     .searchable-container .searchable-items.grid .items .user-email .info-title {
       font-size: 14px;
       font-weight: 600;
-      color: #888ea8;
+      color: #3b3f5c;
       margin-bottom: 11px; }
     .searchable-container .searchable-items.grid .items .user-email p {
-      color: #bfc9d4;
+      color: #888ea8;
       font-size: 13px;
       margin-bottom: 11px; }
   .searchable-container .searchable-items.grid .items .user-location {
@@ -339,11 +342,11 @@
     .searchable-container .searchable-items.grid .items .user-location .info-title {
       font-size: 14px;
       font-weight: 600;
-      color: #888ea8;
+      color: #3b3f5c;
       margin-bottom: 11px;
       margin-right: 10px; }
     .searchable-container .searchable-items.grid .items .user-location p {
-      color: #bfc9d4;
+      color: #888ea8;
       font-size: 13px;
       margin-bottom: 11px; }
   .searchable-container .searchable-items.grid .items .user-phone {
@@ -352,10 +355,10 @@
     .searchable-container .searchable-items.grid .items .user-phone .info-title {
       font-size: 14px;
       font-weight: 600;
-      color: #888ea8;
+      color: #3b3f5c;
       margin-bottom: 11px; }
     .searchable-container .searchable-items.grid .items .user-phone p {
-      color: #bfc9d4;
+      color: #888ea8;
       font-size: 13px;
       margin-bottom: 11px;
       margin-right: 10px; }
@@ -367,11 +370,11 @@
     .searchable-container .searchable-items.grid .items .action-btn .edit, .searchable-container .searchable-items.grid .items .action-btn .delete {
       margin-right: 5px;
       cursor: pointer;
-      color: #bfc9d4;
+      color: #515365;
       width: 20px;
       fill: rgba(27, 85, 226, 0.239216); }
     .searchable-container .searchable-items.grid .items .action-btn .edit:hover, .searchable-container .searchable-items.grid .items .action-btn .delete:hover {
-      color: #009688; }
+      color: #1b55e2; }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */

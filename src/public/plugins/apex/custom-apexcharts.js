@@ -1,12 +1,3 @@
-Apex.grid = {
-    borderColor: '#191e3a'
-}
-Apex.track = {
-    background: '#0e1726',
-}
-Apex.tooltip = {
-    theme: 'dark'
-}
 // Simple Line
 
 var sline = {
@@ -20,6 +11,7 @@ var sline = {
       show: false,
     }
   },
+  // colors: ['#1b55e2'],
   dataLabels: {
     enabled: false
   },
@@ -36,7 +28,7 @@ var sline = {
   },
   grid: {
     row: {
-      colors: ['#3b3f5c', 'transparent'], // takes an array which will be repeated on columns
+      colors: ['#f1f2f3', 'transparent'], // takes an array which will be repeated on columns
       opacity: 0.5
     },
   },
@@ -63,6 +55,7 @@ var sLineArea = {
           show: false,
         }
     },
+    // colors: ['#1b55e2', '#888ea8'],
     dataLabels: {
         enabled: false
     },
@@ -112,6 +105,7 @@ var sCol = {
             endingShape: 'rounded'  
         },
     },
+    // colors: ['#888ea8', '#1b55e2'],
     dataLabels: {
         enabled: false
     },
@@ -167,6 +161,7 @@ var sColStacked = {
           show: false,
         }
     },
+    // colors: ['#1b55e2', '#888ea8', '#acb0c3', '#d3d3d3'],
     responsive: [{
         breakpoint: 480,
         options: {
@@ -225,6 +220,7 @@ var sBar = {
           show: false,
         }
     },
+    // colors: ['#1b55e2'],
     plotOptions: {
         bar: {
             horizontal: true,
@@ -259,6 +255,7 @@ var options = {
       show: false,
     }
   },
+  // colors: ['#1b55e2', '#888ea8'],
   series: [{
     name: 'Website Blog',
     type: 'column',
@@ -311,9 +308,7 @@ var donutChart = {
           show: false,
         }
     },
-    stroke: {
-      colors: '#0e1726'
-    },
+    // colors: ['#1b55e2', '#888ea8', '#acb0c3', '#d3d3d3'],
     series: [44, 55, 41, 17],
     responsive: [{
         breakpoint: 480,
@@ -346,6 +341,7 @@ var radialChart = {
           show: false,
         }
     },
+    // colors: ['#1b55e2', '#888ea8', '#acb0c3', '#d3d3d3'],
     plotOptions: {
         radialBar: {
             dataLabels: {

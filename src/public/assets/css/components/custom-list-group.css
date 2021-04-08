@@ -74,7 +74,7 @@
 
 .new-control.new-checkbox {
   cursor: pointer;
-  color: #888ea8;
+  color: #3b3f5c;
   margin-bottom: 0; }
   .new-control.new-checkbox .new-control-indicator {
     position: absolute;
@@ -88,7 +88,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #515365;
+    background-color: #e0e6ed;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
@@ -122,18 +122,13 @@
     background: #1b55e2; }
 
 .list-group-item {
-  border: 1px solid #191e3a;
-  padding: 10px 12px;
-  background-color: #1b2e4b;
-  color: #888ea8; }
+  border: 1px solid #e0e6ed;
+  padding: 10px 12px; }
   .list-group-item.active {
     color: #fff;
-    background-color: #191e3a;
+    background-color: #888ea8;
     border-color: transparent;
     box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.15); }
-  .list-group-item.disabled, .list-group-item:disabled {
-    background: #506690;
-    color: #888ea8; }
 
 .new-control-indicator {
   background-color: #f1f2f3; }
@@ -145,8 +140,8 @@ code {
   color: #e7515a; }
 
 .list-group-item-action:hover {
-  color: #e0e6ed;
-  background-color: #3b3f5c;
+  color: #3b3f5c;
+  background-color: #f1f2f3;
   box-shadow: 0px 0px 12px 1px rgba(113, 106, 202, 0.08); }
 
 /*------list group-----*/
@@ -154,8 +149,7 @@ code {
     Icons Meta
 */
 .list-group.list-group-icons-meta .list-group-item.active {
-  color: #fff;
-  background-color: #191e3a; }
+  background-color: #888ea8; }
   .list-group.list-group-icons-meta .list-group-item.active .media svg {
     font-size: 27px;
     color: #fff; }
@@ -165,24 +159,24 @@ code {
 
 .list-group.list-group-icons-meta .list-group-item .media svg {
   width: 20px;
-  color: #25d5e4;
+  color: #1b55e2;
   height: 20px; }
 
 .list-group.list-group-icons-meta .list-group-item .media .media-body h6 {
-  color: #888ea8;
+  color: #3b3f5c;
   font-weight: 700;
   margin-bottom: 0;
   font-size: 15px;
   letter-spacing: 1px; }
 
 .list-group.list-group-icons-meta .list-group-item .media .media-body p {
-  color: #888ea8;
+  color: #3b3f5c;
   margin-bottom: 0;
   font-size: 12px;
   font-weight: 600; }
 
 .list-group.list-group-media .list-group-item.active {
-  background-color: #191e3a; }
+  background-color: #888ea8; }
   .list-group.list-group-media .list-group-item.active .media .media-body h6, .list-group.list-group-media .list-group-item.active .media .media-body p {
     color: #fff;
     font-weight: 500; }
@@ -195,19 +189,19 @@ code {
 .list-group.list-group-media .list-group-item .media .media-body {
   align-self: center; }
   .list-group.list-group-media .list-group-item .media .media-body h6 {
-    color: #888ea8;
+    color: #3b3f5c;
     font-weight: 700;
     margin-bottom: 0;
     font-size: 16px;
     letter-spacing: 1px; }
   .list-group.list-group-media .list-group-item .media .media-body p {
-    color: #888ea8;
+    color: #3b3f5c;
     margin-bottom: 0;
     font-size: 12px;
     font-weight: 600; }
 
 .list-group.task-list-group .list-group-item-action.active {
-  background-color: #191e3a;
+  background-color: #888ea8;
   color: #fff; }
   .list-group.task-list-group .list-group-item-action.active .new-control.new-checkbox {
     color: #fff;

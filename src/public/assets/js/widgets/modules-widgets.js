@@ -1,7 +1,5 @@
 try {
-  Apex.tooltip = {
-    theme: 'dark'
-  }
+
 
     /*
         ==============================
@@ -15,109 +13,9 @@ try {
         ======================================
     */
 
-    
     // Total Visits
 
     var spark1 = {
-        chart: {
-            id: 'unique-visits',
-            group: 'sparks2',
-            type: 'line',
-            height: 80,
-            sparkline: {
-                enabled: true
-            },
-            dropShadow: {
-                enabled: true,
-                top: 1,
-                left: 1,
-                blur: 2,
-                color: '#e2a03f',
-                opacity: 0.7,
-            }
-        },
-        series: [{
-            data: [21, 9, 36, 12, 44, 25, 59, 41, 66, 25]
-        }],
-        stroke: {
-          curve: 'smooth',
-          width: 2,
-        },
-        markers: {
-            size: 0
-        },
-        grid: {
-          padding: {
-            top: 35,
-            bottom: 0,
-            left: 40
-          }
-        },
-        colors: ['#e2a03f'],
-        tooltip: {
-            x: {
-                show: false
-            },
-            y: {
-                title: {
-                    formatter: function formatter(val) {
-                        return '';
-                    }
-                }
-            }
-        },
-        responsive: [{
-            breakpoint: 1351,
-            options: {
-               chart: {
-                  height: 95,
-              },
-              grid: {
-                  padding: {
-                    top: 35,
-                    bottom: 0,
-                    left: 0
-                  }
-              },
-            },
-        },
-        {
-            breakpoint: 1200,
-            options: {
-               chart: {
-                  height: 80,
-              },
-              grid: {
-                  padding: {
-                    top: 35,
-                    bottom: 0,
-                    left: 40
-                  }
-              },
-            },
-        },
-        {
-            breakpoint: 576,
-            options: {
-               chart: {
-                  height: 95,
-              },
-              grid: {
-                  padding: {
-                    top: 45,
-                    bottom: 0,
-                    left: 0
-                  }
-              },
-            },
-        }
-
-        ]
-    }
-
-    // Paid Visits
-
-    var spark2 = {
         chart: {
           id: 'total-users',
           group: 'sparks1',
@@ -132,11 +30,11 @@ try {
             left: 1,
             blur: 3,
             color: '#009688',
-            opacity: 0.7,
+            opacity: 0.6,
           }
         },
         series: [{
-          data: [22, 19, 30, 47, 32, 44, 34, 55, 41, 69]
+          data: [12, 14, 5, 47, 32, 44, 14, 55, 41, 69]
         }],
         stroke: {
           curve: 'smooth',
@@ -213,6 +111,104 @@ try {
         ]
     }
     
+    // Paid Visits
+
+    var spark2 = {
+        chart: {
+            id: 'unique-visits',
+            group: 'sparks2',
+            type: 'line',
+            height: 80,
+            sparkline: {
+                enabled: true
+            },
+            dropShadow: {
+                enabled: true,
+                top: 1,
+                left: 1,
+                blur: 2,
+                color: '#e2a03f',
+                opacity: 0.2,
+            }
+        },
+        series: [{
+            data: [21, 9, 36, 12, 44, 25, 59, 41, 66, 25]
+        }],
+        stroke: {
+          curve: 'smooth',
+          width: 2,
+        },
+        markers: {
+            size: 0
+        },
+        grid: {
+          padding: {
+            top: 35,
+            bottom: 0,
+            left: 40
+          }
+        },
+        colors: ['#e2a03f'],
+        tooltip: {
+            x: {
+                show: false
+            },
+            y: {
+                title: {
+                    formatter: function formatter(val) {
+                        return '';
+                    }
+                }
+            }
+        },
+        responsive: [{
+            breakpoint: 1351,
+            options: {
+               chart: {
+                  height: 95,
+              },
+              grid: {
+                  padding: {
+                    top: 35,
+                    bottom: 0,
+                    left: 0
+                  }
+              },
+            },
+        },
+        {
+            breakpoint: 1200,
+            options: {
+               chart: {
+                  height: 80,
+              },
+              grid: {
+                  padding: {
+                    top: 35,
+                    bottom: 0,
+                    left: 40
+                  }
+              },
+            },
+        },
+        {
+            breakpoint: 576,
+            options: {
+               chart: {
+                  height: 95,
+              },
+              grid: {
+                  padding: {
+                    top: 35,
+                    bottom: 0,
+                    left: 0
+                  }
+              },
+            },
+        }
+
+        ]
+    }
 
     /*
         ===================================
@@ -231,9 +227,9 @@ try {
               enabled: true,
               top: 1,
               left: 1,
-              blur: 1,
-              color: '#515365',
-              opacity: 0.3,
+              blur: 2,
+              color: '#acb0c3',
+              opacity: 0.7,
           }
       },
       colors: ['#5c1ac3', '#ffbb44'],
@@ -260,9 +256,6 @@ try {
               vertical: 8
             }
       },
-      grid: {
-        borderColor: '#191e3a',
-      },
       stroke: {
           show: true,
           width: 2,
@@ -281,7 +274,7 @@ try {
       fill: {
         type: 'gradient',
         gradient: {
-          shade: 'dark',
+          shade: 'light',
           type: 'vertical',
           shadeIntensity: 0.3,
           inverseColors: false,
@@ -291,7 +284,6 @@ try {
         }
       },
       tooltip: {
-        theme: 'dark',
           y: {
               formatter: function (val) {
                   return val
@@ -299,6 +291,52 @@ try {
           }
       }
     }
+
+
+    /*
+        ====================================
+            Orgainc and Direct | Options
+        ====================================
+    */
+
+    var d_1options2 = {
+        chart: {
+            type: 'pie',
+            width: 350
+        },
+        colors: ['#2196f3', '#1b2e4b'],
+        dataLabels: {
+          enabled: false
+        },
+        legend: {
+            position: 'bottom',
+            horizontalAlign: 'center',
+            fontSize: '14px',
+            markers: {
+              width: 10,
+              height: 10,
+            },
+            itemMargin: {
+              horizontal: 0,
+              vertical: 8
+            }
+        },        
+        series: [20, 80],
+        labels: ['Direct', 'Organic'],
+        responsive: [{
+            breakpoint: 1599,
+            options: {
+                chart: {
+                    width: '200px',
+                    height: '290px'
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            },
+        }]
+    }
+
 
     /*
         ==============================
@@ -323,7 +361,7 @@ try {
       },
       series: [{
         name: 'Sales',
-        data: [38, 60, 38, 52, 36, 40, 28 ]
+        data: [28, 40, 36, 52, 38, 60, 38]
       }],
       labels: ['1', '2', '3', '4', '5', '6', '7'],
       yaxis: {
@@ -365,7 +403,7 @@ try {
       },
       series: [{
         name: 'Sales',
-        data: [ 60, 28, 52, 38, 40, 36, 38]
+        data: [28, 40, 36, 52, 38, 60, 38]
       }],
       labels: ['1', '2', '3', '4', '5', '6', '7'],
       yaxis: {
@@ -410,13 +448,13 @@ try {
       },
       series: [{
         name: 'Sales',
-        data: [28, 50, 36, 60, 38, 52, 38 ]
+        data: [28, 40, 36, 52, 38, 60, 38]
       }],
       labels: ['1', '2', '3', '4', '5', '6', '7'],
       yaxis: {
         min: 0
       },
-      colors: ['#009688'],
+      colors: ['#8dbf42'],
       tooltip: {
         x: {
           show: false,
@@ -472,6 +510,16 @@ try {
     d_1C_3.render();
 
     /*
+        ====================================
+            Orgainc and Direct | Script
+        ====================================
+    */
+
+    var d_1C_4 = new ApexCharts(document.querySelector("#orgaincDirect"), d_1options2);
+    d_1C_4.render();
+
+
+    /*
         ==============================
             Statistics | Script
         ==============================
@@ -494,11 +542,11 @@ try {
     d_1C_7.render()
 
 
+
 } catch(e) {
   // statements
   console.log(e);
 }
-
 
 
 
@@ -748,7 +796,7 @@ var options1 = {
     floating: false,
     style: {
       fontSize: '25px',
-      color:  '#bfc9d4'
+      color:  '#0e1726'
     },
   },
   stroke: {
@@ -800,7 +848,7 @@ var options1 = {
     }
   },
   grid: {
-    borderColor: '#191e3a',
+    borderColor: '#e0e6ed',
     strokeDashArray: 5,
     xaxis: {
         lines: {
@@ -916,7 +964,7 @@ var options = {
               show: true,
               fontSize: '26px',
               fontFamily: 'Nunito, sans-serif',
-              color: '#bfc9d4',
+              color: '20',
               offsetY: 16,
               formatter: function (val) {
                 return val
@@ -940,7 +988,6 @@ var options = {
     stroke: {
       show: true,
       width: 25,
-      colors: '#0e1726'
     },
     series: [985, 737, 270],
     labels: ['Apparel', 'Electronic', 'Others'],
@@ -1023,6 +1070,7 @@ var chart = new ApexCharts(
 );
 
 chart.render();
+
 
 /*
     =============================================

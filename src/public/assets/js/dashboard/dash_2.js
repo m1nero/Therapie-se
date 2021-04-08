@@ -1,8 +1,5 @@
 try {
 
-  Apex.tooltip = {
-    theme: 'dark'
-  }
 
     /*
         ==============================
@@ -232,9 +229,9 @@ try {
               enabled: true,
               top: 1,
               left: 1,
-              blur: 1,
-              color: '#515365',
-              opacity: 0.3,
+              blur: 2,
+              color: '#acb0c3',
+              opacity: 0.7,
           }
       },
       colors: ['#5c1ac3', '#ffbb44'],
@@ -261,9 +258,6 @@ try {
               vertical: 8
             }
       },
-      grid: {
-        borderColor: '#191e3a',
-      },
       stroke: {
           show: true,
           width: 2,
@@ -282,7 +276,7 @@ try {
       fill: {
         type: 'gradient',
         gradient: {
-          shade: 'dark',
+          shade: 'light',
           type: 'vertical',
           shadeIntensity: 0.3,
           inverseColors: false,
@@ -292,7 +286,6 @@ try {
         }
       },
       tooltip: {
-        theme: 'dark',
           y: {
               formatter: function (val) {
                   return val
@@ -417,7 +410,7 @@ try {
       yaxis: {
         min: 0
       },
-      colors: ['#009688'],
+      colors: ['#8dbf42'],
       tooltip: {
         x: {
           show: false,

@@ -25,13 +25,13 @@
   .media .media-body {
     align-self: center; }
     .media .media-body .media-heading {
-      color: #bfc9d4;
+      color: #3b3f5c;
       font-weight: 700;
       margin-bottom: 10px;
       font-size: 17px;
       letter-spacing: 1px; }
     .media .media-body .media-text {
-      color: #888ea8;
+      color: #515365;
       margin-bottom: 0;
       font-size: 14px;
       letter-spacing: 0; }
@@ -49,7 +49,7 @@
   margin-top: 8px;
   margin-bottom: 9px; }
   .notation-text .media .media-body .media-notation a {
-    color: #506690;
+    color: #515365;
     font-size: 13px;
     font-weight: 700;
     margin-right: 8px; }
@@ -62,12 +62,12 @@
   margin-top: 8px;
   margin-bottom: 9px; }
   .notation-text-icon .media .media-body .media-notation a {
-    color: #506690;
+    color: #515365;
     font-size: 13px;
     font-weight: 700;
     margin-right: 8px; }
     .notation-text-icon .media .media-body .media-notation a svg {
-      color: #506690;
+      color: #888ea8;
       margin-right: 6px;
       vertical-align: sub;
       width: 18px;
@@ -103,7 +103,7 @@
       height: 20px;
       fill: rgba(0, 23, 55, 0.08); }
     .m-o-dropdown-list .media .media-heading div.dropdown-list a.dropdown-item:hover svg {
-      color: #e0e6ed;
+      color: #1b55e2;
       fill: rgba(27, 85, 226, 0.239216); }
 
 .m-o-dropdown-list .dropdown-menu {

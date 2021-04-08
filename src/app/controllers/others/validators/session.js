@@ -7,7 +7,7 @@ module.exports = {
 
         const profissional = await Profissional.findOne({where: { email: email }});
 
-        if (!profissional) return res.render('unauthorized'); //user not found
+        if (!profissional) return res.render('unauthorized'); //user não encontrado
 
         const passed = await compare(senha, profissional.senha);
 

@@ -9,9 +9,9 @@
 	===============================
 */
 .section {
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06); }
 
 .layout-spacing {
   padding-bottom: 25px; }
@@ -30,9 +30,9 @@
     font-size: 20px; }
 
 .general-info .info h6, .about .info h5, .work-platforms .info h5, .contact .info h5, .social .info h5, .skill .info h5, .edu-experience .info h5, .work-experience .info h5 {
-  color: #bfc9d4;
+  color: #3b3f5c;
   margin: 4px 8px 40px 8px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   text-transform: uppercase; }
 
@@ -40,18 +40,22 @@
     General Infomation
 */
 .general-info {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .general-info .info, .general-info .save-info {
     padding: 20px; }
   .general-info .info .form {
     width: 92%; }
   .general-info .info .upload {
-    border-right: 1px solid #191e3a; }
+    border-right: 1px solid #ebedf2; }
     .general-info .info .upload p {
       font-size: 14px;
       font-weight: 600;
-      color: #009688; }
+      color: #1b55e2; }
+      .general-info .info .upload p i {
+        font-size: 22px;
+        color: #1b55e2;
+        vertical-align: middle; }
   .general-info .info label {
     color: #888ea8;
     font-size: 13px;
@@ -60,10 +64,9 @@
     width: 120px;
     height: 120px;
     border: none;
-    border-radius: 6px;
-    background: transparent; }
+    border-radius: 6px; }
     .general-info .info .dropify-wrapper .dropify-preview {
-      background-color: #0e1726;
+      background-color: #fff;
       padding: 0; }
     .general-info .info .dropify-wrapper .dropify-clear {
       font-size: 16px;
@@ -106,7 +109,7 @@
     About
 */
 .about {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .about .info, .about .save-info {
     padding: 20px; }
@@ -119,7 +122,7 @@
     Education and Experience
 */
 .work-platforms {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .work-platforms .info {
     padding: 20px; }
@@ -134,7 +137,7 @@
     Contact
 */
 .contact {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .contact .info, .contact .save-info {
     padding: 20px; }
@@ -147,7 +150,7 @@
     Social
 */
 .social {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .social .info, .social .save-info {
     padding: 20px; }
@@ -156,8 +159,8 @@
     color: #fff;
     border: none; }
 
-.input-group .input-group-prepend .input-group-text svg, .input-group:hover .input-group-prepend .input-group-text svg {
-  color: #009688; }
+.input-group .input-group-prepend .input-group-text svg {
+  color: #1b55e2; }
 
 .social .info input {
   border-radius: 0.25rem !important; }
@@ -166,7 +169,7 @@
     Skills
 */
 .skill {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .skill .input-form {
     margin-bottom: 24px;
@@ -182,8 +185,7 @@
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 0;
-    margin-top: 0;
-    color: #888ea8; }
+    margin-top: 0; }
   .skill .save-info {
     padding: 20px; }
   .skill .info label {
@@ -198,19 +200,17 @@
     color: #3b3f5c; }
     .skill .range-count .range-count-number {
       display: inline-block;
-      background: #1b2e4b;
+      background: #ffffff;
       padding: 3px 8px;
       border-radius: 5px;
-      color: #009688;
-      border: 1px solid #1b2e4b; }
-    .skill .range-count .range-count-unit {
-      color: #009688; }
+      color: #1b55e2;
+      border: 1px solid #e0e6ed; }
   .skill .custom-progress.top-right .range-count, .skill .custom-progress.bottom-right .range-count {
     text-align: right; }
   .skill .progress-range-counter::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: #009688;
+    background: #1b55e2;
     cursor: pointer;
     height: 16px;
     width: 16px;
@@ -221,27 +221,24 @@
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
   .skill .progress-range-counter:focus::-webkit-slider-thumb {
-    background: #009688;
+    background: #1b55e2;
     cursor: pointer;
     height: 16px;
     width: 16px;
     margin-top: -4px;
     box-shadow: none; }
   .skill .progress-range-counter::-moz-range-thumb {
-    background: #009688;
+    background: #1b55e2;
     cursor: pointer;
     height: 16px;
     width: 16px;
     margin-top: -4px; }
 
-input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-track, input[type=range]::-ms-track {
-  background: #191e3a; }
-
 /*
     Education and Experience
 */
 .edu-experience {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .edu-experience .edu-section:not(:last-child) {
     margin-bottom: 55px;
@@ -260,7 +257,7 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
     Work Experience
 */
 .work-experience {
-  background-color: #0e1726;
+  background-color: #fff;
   border-radius: 6px; }
   .work-experience .work-section:not(:last-child) {
     margin-bottom: 55px;
@@ -284,10 +281,10 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
   width: calc(100% - 266px);
   background: #191e3a;
   padding: 12px 20px;
-  -webkit-box-shadow: 0 -6px 10px 0 rgba(0, 0, 0, 0.14), 0 -1px 18px 0 rgba(0, 0, 0, 0.12), 0 -3px 5px -1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 -6px 10px 0 rgba(0, 0, 0, 0.14), 0 -1px 18px 0 rgba(0, 0, 0, 0.12), 0 -3px 5px -1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 -6px 10px 0 rgba(0, 0, 0, 0.14), 0 -1px 18px 0 rgba(0, 0, 0, 0.12), 0 -3px 5px -1px rgba(0, 0, 0, 0.2);
-  border-top: 1px solid #191e3a;
+  -webkit-box-shadow: -2px -9px 20px rgba(126, 142, 177, 0.12);
+  -moz-box-shadow: -2px -9px 20px rgba(126, 142, 177, 0.12);
+  box-shadow: -2px -9px 20px rgba(126, 142, 177, 0.12);
+  border-top: 1px solid #f1f2f3;
   border-radius: 6px 6px 0 0;
   z-index: 5; }
   .account-settings-footer .as-footer-container {

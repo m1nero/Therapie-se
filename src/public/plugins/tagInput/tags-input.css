@@ -21,14 +21,12 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     height: auto;
-    border: 1px solid #1b2e4b;
-    color: #25d5e4;
+    border: 1px solid #f1f2f3;
+    color: #3b3f5c;
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
-    padding: .75rem 1.25rem;
-    border-radius: 6px;
-    background: #1b2e4b; }
+    background-color: #f1f2f3; }
   .tags-input-wrapper .tag {
     display: inline-block;
     background-color: #1b55e2;

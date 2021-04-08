@@ -13,13 +13,12 @@
 
 .modal-content {
   border: none;
-  border-radius: 6px;
-  background: #0e1726; }
+  border-radius: 6px; }
   .modal-content hr {
-    border-top: 1px solid #191e3a; }
+    border-top: 1px solid #e0e6ed; }
   .modal-content .modal-header {
     padding: 12px 26px;
-    border: 1px solid #191e3a; }
+    border: 1px solid #e0e6ed; }
     .modal-content .modal-header h5 {
       font-weight: 700;
       font-size: 20px;
@@ -42,43 +41,20 @@
       .modal-content .modal-body p:not(:last-child) {
         margin-bottom: 10px; }
   .modal-content .modal-footer {
-    border-top: 1px solid #191e3a; }
+    border-top: 1px solid #e0e6ed; }
     .modal-content .modal-footer button.btn {
       font-weight: 600;
       padding: 10px 25px;
       letter-spacing: 1px; }
       .modal-content .modal-footer button.btn[data-dismiss="modal"] {
-        background-color: #1b2e4b;
-        color: #bfc9d4;
-        font-weight: 500;
-        border: 1px solid #1b2e4b; }
+        background-color: #fff;
+        color: #1b55e2;
+        font-weight: 700;
+        border: 1px solid #e8e8e8; }
     .modal-content .modal-footer .btn.btn-primary {
       background-color: #1b55e2;
       color: #fff;
       border: 1px solid #1b55e2; }
-
-/*
-    Modal Tabs
-*/
-.close {
-  text-shadow: none;
-  color: #acb0c3; }
-  .close:hover {
-    color: #acb0c3; }
-
-.nav-tabs {
-  border-bottom: 1px solid #191e3a; }
-  .nav-tabs svg {
-    width: 20px;
-    vertical-align: bottom; }
-  .nav-tabs .nav-link.active {
-    color: #e95f2b;
-    background-color: #191e3a;
-    border-color: #191e3a #191e3a #0e1726; }
-    .nav-tabs .nav-link.active:after {
-      color: #e95f2b; }
-  .nav-tabs .nav-link:hover {
-    border-color: #191e3a #191e3a #191e3a; }
 
 /*
     Modal Success
@@ -125,11 +101,12 @@
   display: inline-block;
   padding: 13px;
   border-radius: 50%;
-  background: #bfc9d4; }
+  background: #f1f2f3;
+  color: #000; }
   .modal-notification .modal-body .icon-content svg {
     width: 36px;
     height: 36px;
-    color: #1b2e4b;
+    color: #888ea8;
     fill: rgba(0, 23, 55, 0.08); }
 
 /*
@@ -223,12 +200,12 @@
     width: 20px;
     top: 11px;
     left: 9px;
-    color: #25d5e4;
+    color: #1b55e2;
     fill: rgba(27, 85, 226, 0.239216); }
   .login-modal .modal-body .form-group input, .register-modal .modal-body .form-group input {
     padding-left: 35px;
     border: none;
-    border-bottom: 1px solid #191e3a;
+    border-bottom: 1px solid #e0e6ed;
     border-radius: 0; }
     .login-modal .modal-body .form-group input.form-control:focus, .register-modal .modal-body .form-group input.form-control:focus {
       box-shadow: none; }
@@ -243,7 +220,7 @@
   .login-modal .modal-body .social a, .register-modal .modal-body .social a {
     background: transparent;
     box-shadow: none;
-    border: 2px solid #191e3a; }
+    border: 2px solid #e0e6ed; }
     .login-modal .modal-body .social a.social-fb svg, .register-modal .modal-body .social a.social-fb svg {
       color: #1b55e2; }
     .login-modal .modal-body .social a.social-github svg, .register-modal .modal-body .social a.social-github svg {

@@ -19,92 +19,6 @@
  * Included libraries:
  *   DataTables 1.10.16
  */
-
- .btn-sync {
-  position: relative;
-  margin-left: 85%;
-  margin: 5px 0px 0px 7.5px;
-  width: 12.5%;
-  color: #fff;
-  background-color: #27a800;
-  border-color: #27a800;
-}
-
-.btn-sync:hover {
-  color: #fff;
-  background-color: #1e8000;
-  border-color: #1e8000;
-}
-
-.btn-sync:focus, .btn-sync.focus {
-  color: #fff;
-  background-color: #1e8000;
-  border-color: #1e8000;
-  box-shadow: 0 0 0 0.2rem rgba(107, 236, 1, 0.5);
-}
-
-.table-refresh__options {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-  justify-content: space-between;
-}
-
-.table-refresh__options > *>:not(:last-child) {
-  margin-left: 12px;
-}
-
-.table-refresh__label {
-  margin-left: 2.125vh;
-}
-
-.table-refresh__button {
-  background-color: #27a800;
-  color: #fff;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 2.3vh;
-  padding: 4px 8px 4px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  vertical-align: auto;
-}
-
-
-.table-refresh__button_2 {
-  background-color: #0035a8;
-  color: #fff;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 2.3vh;
-  padding: 4px 8px 4px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  vertical-align: auto;
-}
-
-.table-refresh__button > i {
-  font-size: 1-2em;
-  color: #fff;
-}
-
-.table-refresh__button--refreshing {
-  animation: 400ms rotate infinite linear;
-  color: #fff;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(1turn)
-  }
-}
-
 table.dataTable {
   clear: both;
   width: 100% !important;
@@ -117,8 +31,6 @@ table.dataTable {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     padding: 9px 7px; }
-  table.dataTable td.first-column {
-    text-align: left; }
   table.dataTable td.dataTables_empty, table.dataTable th.dataTables_empty {
     text-align: center; }
   table.dataTable.nowrap th, table.dataTable.nowrap td {
@@ -126,7 +38,7 @@ table.dataTable {
 
 div.dataTables_wrapper div.dataTables_length label {
   font-weight: normal;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
   color: #888ea8;
   font-weight: 600; }
@@ -175,7 +87,7 @@ div.dataTables_wrapper div.dataTables_processing {
   width: 200px;
   margin-left: -100px;
   margin-top: -26px;
-  text-align: left;
+  text-align: center;
   padding: 1em 0; }
 
 table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting {
@@ -255,7 +167,7 @@ div.dataTables_scrollFoot > .dataTables_scrollFootInner {
 
 @media screen and (max-width: 767px) {
   div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
-    text-align: left; } }
+    text-align: center; } }
 
 table.dataTable.table-sm > thead > tr > th {
   padding-right: 20px; }
