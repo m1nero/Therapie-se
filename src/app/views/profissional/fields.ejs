@@ -29,7 +29,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" id="validationTooltip02" placeholder="CRP/CNPJ"
                     aria-describedby="validationTooltipUsernamePrepend" name="crp_cnpj" 
-                    <% if(page.name == "Editar") { %> value="<%= profissional.crp_cnpj %>" <% } %> required>
+                    <% if(page.name == "Editar") { %> value="<%= profissional.crp_cnpj %>" <% } %> maxlength='14' required>
             </div>
         </div>
     </div>
@@ -60,8 +60,8 @@
         <div class="col-md-3 mb-5">
             <label for="validationTooltip02">Estado</label>
             <input type="text" class="form-control" id="validationTooltip04"
-                placeholder="Estado" name="estado" 
-                <% if(page.name == "Editar") { %> value="<%= profissional.estado %>" <% } %> required>
+                placeholder="Estado" name="estado"
+                <% if(page.name == "Editar") { %> value="<%= profissional.estado %>" <% } %>  maxlength='2' required>
 
             <div class="valid-tooltip">
                 Looks good!
@@ -76,7 +76,7 @@
             <input type="text" class="form-control" id="validationTooltip05"
                 placeholder="XXXXX-XXX" name="cep" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.cep %>" <% } %>
-                required>
+                required  maxlength='8'>
     
             <div class="valid-tooltip">
                 Looks good!
@@ -87,7 +87,7 @@
             <label for="validationTooltip02">Telefone</label>
             <input type="text" class="form-control" id="6"
                 placeholder="(XX) XXXX-XXXX" name="telefone" 
-                <% if(page.name == "Editar") { %> value="<%= profissional.telefone %>" <% } %>required>
+                <% if(page.name == "Editar") { %> value="<%= profissional.telefone %>" <% } %> required>
     
             <div class="valid-tooltip">
                 Looks good!
@@ -101,7 +101,7 @@
             <label for="validationTooltip02">Url Foto de Perfil</label>
             <input type="text" class="form-control" id="validationTooltip07"
                 placeholder="https://" name="url" 
-                <% if(page.name == "Editar") { %> value="<%= profissional.url %>" <% } %>required>
+                <% if(page.name == "Editar") { %> value="<%= profissional.url %>" <% } %> required>
         </div>
     </div>
 
