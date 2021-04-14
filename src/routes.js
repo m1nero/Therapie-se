@@ -37,6 +37,8 @@ routes.get('/profissionais/:profissionalId', onlyUsers, profissionalController.p
 
 //Pacientes
 routes.get('/materiais', pacienteController.materiais);
+routes.get('/imagens', pacienteController.imagens);
+routes.get('/videos', pacienteController.videos);
 routes.get('/profissionais', pacienteController.profissionais);
 
 module.exports = routes;

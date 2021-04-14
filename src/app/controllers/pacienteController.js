@@ -14,6 +14,30 @@ module.exports = {
         });
     },
 
+    async videos(req, res) {
+        const materiais = await Material.findAll();
+
+        return res.render('paciente/videos', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Paciente"
+            },
+            materiais
+        });
+    },
+
+    async imagens(req, res) {
+        const materiais = await Material.findAll();
+
+        return res.render('paciente/imagens', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Paciente"
+            },
+            materiais
+        });
+    },
+
     async profissionais(req, res){
         const profissionais = await Profissional.findAll();
 
