@@ -2,24 +2,70 @@
     <nav id="sidebar">
         <ul class="list-unstyled menu-categories" id="accordionExample">
             <li class="menu">
-                <ul class="collapse submenu list-unstyled show" id="dashboard" data-parent="#accordionExample">
-                    <li>
-                        <a href="/materiais">Material de apoio</a>
-                    </li>
+                <a href="#dashboard" 
+                    <% if (page.name == 'Material de Apoio') { %> 
+                        data-active="true" 
+                    <% } %> data-toggle="collapse"
 
-                    <li>
+                    <% if (page.name == 'Material de Apoio') { %> 
+                        aria-expanded="true" 
+                    <% } %>  class="dropdown-toggle"
+                >
+
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="far fa-list-alt"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Material Apoio</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+
+                <ul 
+                    <% if (page.name == 'Material de Apoio') { %>
+                        class="collapse submenu list-unstyled show" 
+                    <% } else { %> class="collapse submenu list-unstyled" <% } %> id="dashboard" data-parent="#accordionExample">
+
+                    <li <% if (page.type == 'imagens') { %> class="active" <% } %> >
                         <a href="/imagens">Imagens</a>
                     </li>
 
-                    <li>
+                    <li <% if (page.type == 'videos') { %> class="active" <% } %>>
                         <a href="/videos">Vídeos</a>
                     </li>
 
-                    <li>
+                    <li <% if (page.type == 'textos') { %> class="active" <% } %>>
                         <a href="/textos">Textos</a>
                     </li>
+                </ul>
+            </li>
 
-                    <li>
+            <li class="menu">
+                <a href="#users" 
+                    <% if (page.name == 'Profissionais e Clínicas') { %> 
+                        data-active="true" 
+                    <% } %> data-toggle="collapse" 
+
+                    <% if (page.name == 'Profissionais e Clínicas') { %> 
+                        aria-expanded="true" 
+                    <% } %> class="dropdown-toggle"
+                >
+
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Profissionais</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+
+                <ul 
+                    <% if (page.name == 'Profissionais e Clínicas') { %> 
+                        class="collapse submenu list-unstyled show" 
+                    <% } else { %> class="collapse submenu list-unstyled" <% } %> id="users" data-parent="#accordionExample">
+                    
+                    <li <% if (page.name == 'Profissionais e Clínicas') { %> class="active" <% } %>>
                         <a href="/profissionais">Profissionais</a>
                     </li>
                 </ul>

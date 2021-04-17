@@ -36,7 +36,7 @@ routes.get('/materiais/:profissionalId', onlyUsers, profissionalController.mater
 routes.get('/profissionais/:profissionalId', onlyUsers, profissionalController.profissional); //pagina edit material
 
 //Pacientes
-routes.get('/materiais', pacienteController.materiais);
+routes.get('/textos', pacienteController.textos);
 routes.get('/imagens', pacienteController.imagens);
 routes.get('/videos', pacienteController.videos);
 routes.get('/profissionais', pacienteController.profissionais);

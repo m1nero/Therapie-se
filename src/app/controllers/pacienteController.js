@@ -2,25 +2,14 @@ const Profissional = require('../models/Profissional');
 const Material = require('../models/Material');
 
 module.exports = {
-    async materiais(req, res) {
-        const materiais = await Material.findAll();
-
-        return res.render('paciente/materiais', {
-            page: {
-                name: 'Material de Apoio',
-                user: "Paciente"
-            },
-            materiais
-        });
-    },
-
     async videos(req, res) {
         const materiais = await Material.findAll();
 
         return res.render('paciente/videos', {
             page: {
                 name: 'Material de Apoio',
-                user: "Paciente"
+                user: "Paciente",
+                type: 'videos'
             },
             materiais
         });
@@ -32,7 +21,21 @@ module.exports = {
         return res.render('paciente/imagens', {
             page: {
                 name: 'Material de Apoio',
-                user: "Paciente"
+                user: "Paciente",
+                type: 'imagens'
+            },
+            materiais
+        });
+    },
+
+    async textos(req, res) {
+        const materiais = await Material.findAll();
+
+        return res.render('paciente/textos', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Paciente",
+                type: 'textos'
             },
             materiais
         });
