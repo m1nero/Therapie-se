@@ -16,7 +16,7 @@ module.exports = {
     entrar(req, res) {
         req.session.profissionalId = req.profissional.id;
         let id = req.profissional.id;
-        return res.redirect(`/profissionais/${id}`);
+        return res.redirect(`/material/list/${id}`); ///
     },
 
     create(req, res) {
@@ -43,8 +43,26 @@ module.exports = {
         return res.redirect('/login');
     },
 
+    async meuPerfil(req, res) {
+        req.session.profissionalId = req.profissional.id;
+        let id = req.profissional.id;
+
+        const profissional = await Profissional.findByPk(id);
+
+        res.render('profissional/form', { //pegar aquela tela de meu perfil
+            page: {
+                name: "Meu Perfil",
+                user: "Profissional"
+            },
+            profissional
+        });
+    },
+
     async edit(req, res) {
         const { profissionalId } = req.params;
+
+        req.session.profissionalId = req.profissional.id;
+        let id = req.profissional.id;
 
         const profissional = await Profissional.findByPk(profissionalId);
 

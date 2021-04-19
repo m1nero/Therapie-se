@@ -20,6 +20,7 @@ routes.post('/logout', profissionalController.logout);
 routes.get('/registrar', profissionalController.create); //tela cadastra profissional
 routes.post('/registrar', profissionalController.store); //grava profissional
 
+routes.get('/meu-perfil', onlyUsers, profissionalController.meuPerfil); //pagina edit profissional
 routes.get('/profissional/edit/:profissionalId', onlyUsers, profissionalController.edit); //pagina edit profissional
 routes.put('/profissional/edit/:profissionalId', onlyUsers, profissionalController.update); //update profissional
 routes.delete('/profissional/delete/:profissionalId', onlyUsers, profissionalController.delete); //deleta profissional
