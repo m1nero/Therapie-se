@@ -22,9 +22,15 @@
 </head>
 <body>
     <!--  NAVBAR  -->
-    <%- include ('../parts/navbar/Navbar') %>
+    <% if(page.user == "Profissional") { %>
+        <%- include ('../parts/navbar/NavbarProfissional') %>
+    <% } else { %>
+        <%- include ('../parts/navbar/Navbar') %>
+    <% } %>
+
     <!--  SUBNAVBAR  -->
     <%- include ('../parts/navbar/subNavbar') %>
+    <% } %>
 
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
@@ -33,7 +39,11 @@
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <%- include ('../parts/sidebar') %>
+        <% if(page.user == "Profissional") { %>
+            <%- include ('../parts/sidebarProfissional') %>
+        <% } else { %>
+            <%- include ('../parts/sidebar') %>
+        <% } %> 
         <!--  BEGIN CONTENT AREA  -->
 
         <!--  BEGIN CONTENT AREA  -->

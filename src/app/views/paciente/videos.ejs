@@ -2,9 +2,11 @@
 
 <body>
     <!--  NAVBAR  -->
-    <% if(page.user == "Paciente") { %>
+    <% if(page.user == "Profissional") { %>
+        <%- include ('../parts/navbar/NavbarProfissional') %>
+    <% } else { %>
         <%- include ('../parts/navbar/Navbar') %>
-    <% } %> 
+    <% } %>
 
     <!--  SUBNAVBAR  -->
     <%- include ('../parts/navbar/subNavbar') %>
@@ -15,12 +17,10 @@
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <% if(page.user == "Paciente") { %>
-            <%- include ('../parts/sidebar') %>
-        <% } %>
-
         <% if(page.user == "Profissional") { %>
             <%- include ('../parts/sidebarProfissional') %>
+        <% } else { %>
+            <%- include ('../parts/sidebar') %>
         <% } %> 
 
         <!--  BEGIN CONTENT AREA  -->

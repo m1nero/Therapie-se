@@ -16,7 +16,7 @@ module.exports = {
     entrar(req, res) {
         req.session.profissionalId = req.profissional.id;
         let id = req.profissional.id;
-        return res.redirect(`/material/list/${id}`); ///
+        return res.redirect(`/profissional/edit`); ///
     },
 
     create(req, res) {
@@ -44,10 +44,7 @@ module.exports = {
     },
 
     async meuPerfil(req, res) {
-        req.session.profissionalId = req.profissional.id;
-        let id = req.profissional.id;
-
-        const profissional = await Profissional.findByPk(id);
+        const profissional = await Profissional.findByPk(req.session.profissionalId);
 
         res.render('profissional/form', { //pegar aquela tela de meu perfil
             page: {
@@ -59,12 +56,7 @@ module.exports = {
     },
 
     async edit(req, res) {
-        const { profissionalId } = req.params;
-
-        req.session.profissionalId = req.profissional.id;
-        let id = req.profissional.id;
-
-        const profissional = await Profissional.findByPk(profissionalId);
+        const profissional = await Profissional.findByPk(req.session.profissionalId);
 
         res.render('profissional/form', {
             page: {
@@ -143,5 +135,44 @@ module.exports = {
             profissionais,
             profissional
         });
-    }
+    },
+
+    async videos(req, res) {
+        const materiais = await Material.findAll();
+
+        return res.render('paciente/videos', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Profissional",
+                type: 'videos'
+            },
+            materiais
+        });
+    },
+
+    async imagens(req, res) {
+        const materiais = await Material.findAll();
+
+        return res.render('paciente/imagens', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Profissional",
+                type: 'imagens'
+            },
+            materiais
+        });
+    },
+
+    async textos(req, res) {
+        const materiais = await Material.findAll();
+
+        return res.render('paciente/textos', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Profissional",
+                type: 'textos'
+            },
+            materiais
+        });
+    },
 };

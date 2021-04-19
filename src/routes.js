@@ -9,11 +9,11 @@ const materialController = require('./app/controllers/materialController');
 
 const SessionValidator = require('./app/controllers/others/validators/session');
 
-const { isLoggedRedirectToMaterial, onlyUsers } = require('./app/controllers/others/middlewares/session');
+const { isLoggedRedirectToMeuPerfil, onlyUsers } = require('./app/controllers/others/middlewares/session');
 
 routes.get('/', indexController.index); //escolha paciente ou profissional
 
-routes.get('/login', isLoggedRedirectToMaterial, profissionalController.login);
+routes.get('/login', isLoggedRedirectToMeuPerfil, profissionalController.login);
 routes.post('/login', SessionValidator.login, profissionalController.entrar);
 routes.post('/logout', profissionalController.logout);
 
@@ -21,7 +21,7 @@ routes.get('/registrar', profissionalController.create); //tela cadastra profiss
 routes.post('/registrar', profissionalController.store); //grava profissional
 
 routes.get('/meu-perfil', onlyUsers, profissionalController.meuPerfil); //pagina edit profissional
-routes.get('/profissional/edit/:profissionalId', onlyUsers, profissionalController.edit); //pagina edit profissional
+routes.get('/profissional/edit', onlyUsers, profissionalController.edit); //pagina edit profissional
 routes.put('/profissional/edit/:profissionalId', onlyUsers, profissionalController.update); //update profissional
 routes.delete('/profissional/delete/:profissionalId', onlyUsers, profissionalController.delete); //deleta profissional
 
@@ -35,6 +35,11 @@ routes.delete('/material/delete/:materialId', onlyUsers, materialController.dele
 
 routes.get('/materiais/:profissionalId', onlyUsers, profissionalController.material); //pagina edit material
 routes.get('/profissionais/:profissionalId', onlyUsers, profissionalController.profissional); //pagina edit material
+
+//Materiais Editar
+routes.get('/editar/textos', onlyUsers, profissionalController.textos);
+routes.get('/editar/imagens', onlyUsers, profissionalController.imagens);
+routes.get('/editar/videos', onlyUsers, profissionalController.videos);
 
 //Pacientes
 routes.get('/textos', pacienteController.textos);
