@@ -11,22 +11,32 @@ const SessionValidator = require('./app/controllers/others/validators/session');
 
 const { isLoggedRedirectToMeuPerfil, onlyUsers } = require('./app/controllers/others/middlewares/session');
 
+//Index
 routes.get('/', indexController.index); //escolha paciente ou profissional
+routes.get('/login', isLoggedRedirectToMeuPerfil, indexController.login); //mostra tela de login
+routes.post('/login', SessionValidator.login, indexController.entrar); //envia email e senha
+routes.post('/logout', indexController.logout); //deleta sesion, logout
 
-routes.get('/login', isLoggedRedirectToMeuPerfil, profissionalController.login);
-routes.post('/login', SessionValidator.login, profissionalController.entrar);
-routes.post('/logout', profissionalController.logout);
-
+//Profissional Add
 routes.get('/registrar', profissionalController.create); //tela cadastra profissional
 routes.post('/registrar', profissionalController.store); //grava profissional
 
-routes.get('/meu-perfil', onlyUsers, profissionalController.meuPerfil); //pagina edit profissional
+//Profissional Editar
 routes.get('/profissional/edit', onlyUsers, profissionalController.edit); //pagina edit profissional
-routes.put('/profissional/edit/:profissionalId', onlyUsers, profissionalController.update); //update profissional
-routes.delete('/profissional/delete/:profissionalId', onlyUsers, profissionalController.delete); //deleta profissional
+routes.put('/profissional/edit', onlyUsers, profissionalController.update); //update profissional
+routes.delete('/profissional/delete', onlyUsers, profissionalController.delete); //deleta profissional
+
+routes.get('/meu-perfil', onlyUsers, profissionalController.meuPerfil); //pagina edit profissional
+
+//Material Add
+routes.get('/material/add', onlyUsers, materialController.materialAdd); //pagina add material
+
+//Materiais Editar
+routes.get('/editar/imagens', onlyUsers, profissionalController.imagens);
+routes.get('/editar/textos', onlyUsers, profissionalController.textos);
+routes.get('/editar/videos', onlyUsers, profissionalController.videos);
 
 routes.get('/material/list/:profissionalId', onlyUsers, materialController.materialList); //table list material
-routes.get('/material/add/:profissionalId', onlyUsers, materialController.materialAdd); //pagina add material
 routes.post('/material/add/:profissionalId', onlyUsers, materialController.store); //grava material
 
 routes.get('/material/:materialId/edit/:profissionalId', onlyUsers, materialController.materialEdita); //pagina edit material
@@ -34,12 +44,6 @@ routes.put('/material/:materialId/edit/:profissionalId', onlyUsers, materialCont
 routes.delete('/material/delete/:materialId', onlyUsers, materialController.delete); //deleta material
 
 routes.get('/materiais/:profissionalId', onlyUsers, profissionalController.material); //pagina edit material
-routes.get('/profissionais/:profissionalId', onlyUsers, profissionalController.profissional); //pagina edit material
-
-//Materiais Editar
-routes.get('/editar/textos', onlyUsers, profissionalController.textos);
-routes.get('/editar/imagens', onlyUsers, profissionalController.imagens);
-routes.get('/editar/videos', onlyUsers, profissionalController.videos);
 
 //Pacientes
 routes.get('/textos', pacienteController.textos);

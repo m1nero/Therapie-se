@@ -60,9 +60,10 @@
                     </div>
                 </a>
 
-                <ul <% if (page.name == 'Meu Perfil' || page.name == 'Editar') { %>
+                <ul 
+                    <% if (page.name == 'Meu Perfil' || page.name == 'Editar') { %>
                         class="collapse submenu list-unstyled show" 
-                    <% } else { %> class="collapse submenu list-unstyled" <% } %> id="dashboard" data-parent="#accordionExample">
+                    <% } else { %> class="collapse submenu list-unstyled" <% } %> id="users" data-parent="#accordionExample">
 
                     <li <% if (page.name == 'Meu Perfil') { %> class="active" <% } %>>
                         <a href="/meu-perfil">Meu Perfil</a>

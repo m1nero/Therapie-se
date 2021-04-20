@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Therapie-se</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
+<%- include ('../parts/head') %>
 
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
-    <link href="plugins/lightbox/photoswipe.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/lightbox/default-skin/default-skin.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/lightbox/custom-photswipe.css" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL STYLES -->   
-
-</head>
 <body>
     <!--  NAVBAR  -->
     <% if(page.user == "Profissional") { %>
@@ -30,7 +10,6 @@
 
     <!--  SUBNAVBAR  -->
     <%- include ('../parts/navbar/subNavbar') %>
-    <% } %>
 
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
@@ -44,7 +23,6 @@
         <% } else { %>
             <%- include ('../parts/sidebar') %>
         <% } %> 
-        <!--  BEGIN CONTENT AREA  -->
 
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
@@ -55,7 +33,7 @@
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h3>Imagens de apoio</h4> 
+                                        <h3>Imagens de apoio</h3> 
                                     </div>
                                 </div>
                             </div>
@@ -128,9 +106,8 @@
                 </div>
             </div>
         </div>
-        <!--  END CONTENT AREA  -->
     </div>
-    <!-- END MAIN CONTAINER -->    
+
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>

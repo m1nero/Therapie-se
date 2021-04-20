@@ -4,21 +4,6 @@ const Profissional = require('../models/Profissional');
 const Material = require('../models/Material');
 
 module.exports = {
-    login(req, res) {
-        return res.render('login');
-    },
-
-    logout(req, res) {
-        req.session.destroy();
-        return res.redirect('/');
-    },
-
-    entrar(req, res) {
-        req.session.profissionalId = req.profissional.id;
-        let id = req.profissional.id;
-        return res.redirect(`/profissional/edit`); ///
-    },
-
     create(req, res) {
         res.render('profissional/form', {
             page: {
@@ -46,7 +31,7 @@ module.exports = {
     async meuPerfil(req, res) {
         const profissional = await Profissional.findByPk(req.session.profissionalId);
 
-        res.render('profissional/form', { //pegar aquela tela de meu perfil
+        res.render('profissional/meu_perfil', {
             page: {
                 name: "Meu Perfil",
                 user: "Profissional"
@@ -137,6 +122,7 @@ module.exports = {
         });
     },
 
+    //dnhwe
     async videos(req, res) {
         const materiais = await Material.findAll();
 
