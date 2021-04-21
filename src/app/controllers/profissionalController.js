@@ -152,7 +152,7 @@ module.exports = {
     async textos(req, res) {
         const materiais = await Material.findAll();
 
-        return res.render('paciente/textos', {
+        return res.render('profissional/textos', {
             page: {
                 name: 'Material de Apoio',
                 user: "Profissional",

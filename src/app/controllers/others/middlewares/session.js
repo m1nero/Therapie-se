@@ -6,7 +6,7 @@ function onlyUsers (req, res, next) {
 
 function isLoggedRedirectToMeuPerfil(req, res, next) {
     if (req.session.profissionalId) {
-        return res.redirect(`/profissional/edit`); //redireciona pra tela nova meu perfil
+        return res.redirect(`/meu-perfil`); //redireciona pra tela nova meu perfil
     }
     next();
 }
