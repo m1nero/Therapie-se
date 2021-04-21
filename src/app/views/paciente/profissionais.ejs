@@ -34,6 +34,7 @@
 
                 <% for (var i = 0; i < profissionais.length;  i++ ) { %>
                   <div class="items">
+                <a href="/ver-perfil/<%= profissionais[i].id %>"> 
                     <div class="item-content">
 
                       <div class="user-profile">
@@ -60,6 +61,7 @@
 
                     </div>
                   </div>
+                </a>
                 <% } %>
               </div>
 

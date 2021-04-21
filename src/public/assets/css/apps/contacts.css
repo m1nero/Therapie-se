@@ -13,9 +13,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  background: rgba(136, 142, 168, 0.211765);
+  background: rgba(136, 142, 168, 0.375);
   width: 100%;
-  height: 183px;
+  height: 100%;
   z-index: -1; }
 
 /*----------Theme checkbox---------*/
@@ -299,11 +299,11 @@
   padding-right: 15px;
   padding-left: 15px; }
   .searchable-container .searchable-items.grid .items .item-content {
-    background-color: #fff;
+    background-color:  rgba(255, 255, 255, 0.975);
     padding: 13px 18px;
     -webkit-box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
     box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12);
-    border-radius: 6px; }
+    border-radius: 12px; }
   .searchable-container .searchable-items.grid .items.items-header-section {
     display: none; }
   .searchable-container .searchable-items.grid .items .user-profile {

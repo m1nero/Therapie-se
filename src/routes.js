@@ -50,5 +50,6 @@ routes.get('/textos', pacienteController.textos);
 routes.get('/imagens', pacienteController.imagens);
 routes.get('/videos', pacienteController.videos);
 routes.get('/profissionais', pacienteController.profissionais);
+routes.get('/ver-perfil/:profissionalId', pacienteController.verPerfil);
 
 module.exports = routes;

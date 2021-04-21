@@ -51,5 +51,18 @@ module.exports = {
             },
             profissionais
         });
-    }
+    },
+
+    async verPerfil(req, res){
+        const { profissionalId } = req.params;
+        const profissional = await Profissional.findByPk(profissionalId);
+
+        return res.render('paciente/ver_perfil', {
+            page: {
+                name: 'Profissionais e Clínicas',
+                user: "Paciente"
+            },
+            profissional
+        });
+    },
 }
