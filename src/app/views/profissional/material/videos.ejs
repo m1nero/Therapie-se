@@ -10,7 +10,6 @@
 
     <!--  SUBNAVBAR  -->
     <%- include ('../../parts/navbar/subNavbar') %>
-
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
 
@@ -31,16 +30,35 @@
                     <div class="col-xl-12 col-lg-6 col-md-5 col-sm-12 layout-top-spacing">
                         <div class="bio layout-spacing ">
                             <div class="widget-content widget-content-area">
-                                <h3 class="">Textos Motivacionais</h3>
+                                <div class="widget-content searchable-container list">
+                                    <div class="row">
+                                        <div class="col-xl-8 col-lg-7 col-md-7 col-sm-5 text-sm-right text-center layout-spacing align-self-center">
+                                            <div class="d-flex justify-content-sm-start justify-content-left">
+                                                <h3 class="">Videos Motivacionais 
+                                                    <a href="/video/add">
+                                                        <svg id="btn-add-contact" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bio-skill-box">
                                     <div class="row">
                                         <% for( let i = 0; i < materiais.length; i++ ) { %>
-                                            <% if (materiais[i].txt_motivacional != null) { %> 
+
+                                            <% if (materiais[i].video_id != null) { %> 
                                                 <div class="col-md-6">
                                                     <div class="jumbotron">
-                                                      <p class="lead mt-3 mb-4">
-                                                        <%= materiais[i].txt_motivacional %>
-                                                    </p>
+                                                        <iframe width="512" height="300" 
+                                                            src="https://www.youtube.com/embed/<%= materiais[i].video_id %>"
+                                                            frameborder="0" allow="accelerometer; autoplay;clipboard-write;
+                                                            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                                        </iframe>
+                                                        <a href="/video/edit/<%= materiais[i].id %>" class="btn btn-secondary mt-2">
+                                                            Editar
+                                                        </a>
                                                     </div>
                                                 </div>
                                             <% } %>
@@ -61,12 +79,14 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="/assets/js/app.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             App.init();
         });
     </script>
     <script src="/assets/js/custom.js"></script>
+    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/assets/js/apps/contact.js"></script>
 </body>
 </html>

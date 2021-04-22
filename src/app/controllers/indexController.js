@@ -15,6 +15,6 @@ module.exports = {
     entrar(req, res) {
         req.session.profissionalId = req.profissional.id;
         let id = req.profissional.id;
-        return res.redirect(`/meu-perfil`);
+        return res.redirect('/meu-perfil');
     }
 }

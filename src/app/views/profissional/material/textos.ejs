@@ -43,23 +43,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <% if (materiais.length > 0) { %> 
-                                        <h6>Clique no texto para editar</h6>
-                                    <% } %>
                                 </div>
 
                                 <div class="bio-skill-box">
                                     <div class="row">
                                         <% for( let i = 0; i < materiais.length; i++ ) { %>
-                                            <% if (materiais[i].txt_motivacional != "") { %> 
+                                            <% if (materiais[i].txt_motivacional != null) { %> 
                                                 <div class="col-md-6">
-                                                <a href="/texto/edit/<%= materiais[i].id %>">
                                                     <div class="jumbotron">
-                                                      <p class="lead mt-3 mb-4">
-                                                        <%= materiais[i].txt_motivacional %>
-                                                      </p>
+                                                        <p class="lead mt-3 mb-4">
+                                                            <%= materiais[i].txt_motivacional %>
+                                                        </p>
+
+                                                        <a href="/texto/edit/<%= materiais[i].id %>" class="btn btn-secondary mt-2">
+                                                            Editar
+                                                        </a>
                                                     </div>
-                                                </a>
                                                 </div>
                                             <% } %>
                                         <% } %>

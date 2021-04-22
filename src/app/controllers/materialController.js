@@ -2,18 +2,7 @@ const Material = require('../models/Material');
 const Profissional = require('../models/Profissional');
 
 module.exports = {
-    async materialAdd(req, res) {
-        const { profissionalId } = req.params;
-
-        const profissional = await Profissional.findByPk(profissionalId);
-        return res.render('material/material_form', {
-            page: {
-                name: "Adicionar"
-            },
-            profissional
-        });
-    },
-
+    //Texto
     async textoAdd(req, res) {
         const { materialId } = req.params;
 
@@ -40,37 +29,6 @@ module.exports = {
         return res.redirect('/texto/edit');
     },
 
-    async store(req, res) {
-        const { profissionalId } = req.params;
-        let { url_imagem, video_id, txt_motivacional } = req.body;
-
-        let profissional_id = profissionalId;
-
-        const materiais = await Material.create({ url_imagem, video_id, txt_motivacional, profissional_id });
-
-        return res.redirect(`/material/list/${profissionalId}`);
-    },
-
-    async materialEdita(req, res) {
-        const { materialId, profissionalId } = req.params;
-
-        const profissional = await Profissional.findByPk(profissionalId);
-        const material = await Material.findAll({ 
-            where: {
-                profissional_id: profissionalId,
-                id: materialId
-            }
-        });
-
-        return res.render('material/material_form', {
-            page: {
-                name: "Editar"
-            },
-            material,
-            profissional
-        });
-    },
-
     async textoEdit(req, res) {
         const { materialId } = req.params;
 
@@ -90,53 +48,197 @@ module.exports = {
         });
     },
 
-    async update(req, res) {
-        let { materialId, profissionalId } = req.params;
-        let { url_imagem, video_id, txt_motivacional } = req.body;
+    async textoUpdate(req, res) {
+        const { materialId } = req.params;
+        let { txt_motivacional } = req.body;
 
         await Material.update({
-            url_imagem: req.body.url_imagem,
-            video_id: req.body.video_id,
-            txt_motivacional: req.body.txt_motivacional,
-            },
-            { where: { id: req.params.materialId }}
+            url_imagem: null,
+            video_id: null,
+            txt_motivacional: txt_motivacional,
+        }, { where: { 
+                id: materialId,
+                profissional_id: req.session.profissionalId
+           }}
         );
 
-        return res.redirect(`/material/list/${profissionalId}`);
+        return res.redirect('/texto/edit');
     },
 
-    async delete(req, res) {
+    async textoDelete(req, res) {
         const { materialId } = req.params;
 
         const material = await Material.findByPk(materialId);
-        let profissionalId = material.profissional_id;
 
         if(!material) {
-            return res.status(400).json({error: 'Material not found'});
+            return res.status(400).json({error: 'Texto not found'});
         }
 
-        Material.destroy({
-            where: {id: req.params.materialId}
-        })
+        Material.destroy({ where: { 
+            id: materialId,
+            profissional_id: req.session.profissionalId
+        }});
 
-        return res.redirect(`/material/list/${profissionalId}`);
+        return res.redirect('/texto/edit');
     },
 
-    async materialList(req, res) {
-        const { profissionalId } = req.params;
+    //Imagem
+    async imagemAdd(req, res) {
+        const { materialId } = req.params;
 
-        const profissional = await Profissional.findByPk(profissionalId);
-        const materiais = await Material.findAll({ 
-            where: { profissional_id: profissionalId }
-        });
-
-        return res.render('material/list', { 
+        const material = await Material.findByPk(materialId);
+        return res.render('material/material_form', {
             page: {
-                name: "Listagem de Material",
-                user: "Profissional"
+                name: "Adicionar",
+                type:  "imagem"
             },
-            materiais, 
-            profissional 
+            material
         });
-    }
+    },
+
+    async imagemStore(req, res) {
+        let { url_imagem } = req.body;
+
+        const material = await Material.create({ 
+            url_imagem: url_imagem,
+            video_id: null,
+            txt_motivacional: null,
+            profissional_id: req.session.profissionalId
+        });
+
+        return res.redirect('/imagem/edit');
+    },
+
+    async imagemEdit(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findAll({ 
+            where: {
+                profissional_id: req.session.profissionalId,
+                id: materialId
+            }
+        });
+
+        return res.render('material/material_form', {
+            page: {
+                name: "Editar",
+                type: "imagem"
+            },
+            material
+        });
+    },
+
+    async imagemUpdate(req, res) {
+        const { materialId } = req.params;
+        let { url_imagem } = req.body;
+
+        await Material.update({
+            url_imagem: url_imagem,
+            video_id: null,
+            txt_motivacional: null,
+        }, { where: { 
+                id: materialId,
+                profissional_id: req.session.profissionalId
+           }}
+        );
+
+        return res.redirect('/imagem/edit');
+    },
+
+    async imagemDelete(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findByPk(materialId);
+
+        if(!material) {
+            return res.status(400).json({error: 'Texto not found'});
+        }
+
+        Material.destroy({ where: { 
+            id: materialId,
+            profissional_id: req.session.profissionalId
+        }});
+
+        return res.redirect('/imagem/edit');
+    },
+
+    //Video
+    async videoAdd(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findByPk(materialId);
+        return res.render('material/material_form', {
+            page: {
+                name: "Adicionar",
+                type:  "video"
+            },
+            material
+        });
+    },
+
+    async videoStore(req, res) {
+        let { video_id } = req.body;
+
+        const material = await Material.create({ 
+            url_imagem: null,
+            video_id: video_id,
+            txt_motivacional: null,
+            profissional_id: req.session.profissionalId
+        });
+
+        return res.redirect('/video/edit');
+    },
+
+    async videoEdit(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findAll({ 
+            where: {
+                profissional_id: req.session.profissionalId,
+                id: materialId
+            }
+        });
+
+        return res.render('material/material_form', {
+            page: {
+                name: "Editar",
+                type: "imagem"
+            },
+            material
+        });
+    },
+
+    async videoUpdate(req, res) {
+        const { materialId } = req.params;
+        let { video_id } = req.body;
+
+        await Material.update({
+            url_imagem: null,
+            video_id: video_id,
+            txt_motivacional: null,
+        }, { where: { 
+                id: materialId,
+                profissional_id: req.session.profissionalId
+           }}
+        );
+
+        return res.redirect('/imagem/edit');
+    },
+
+    async videoDelete(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findByPk(materialId);
+
+        if(!material) {
+            return res.status(400).json({error: 'Texto not found'});
+        }
+
+        Material.destroy({ where: { 
+            id: materialId,
+            profissional_id: req.session.profissionalId
+        }});
+
+        return res.redirect('/video/edit');
+    },
 }

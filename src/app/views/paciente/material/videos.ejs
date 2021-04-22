@@ -35,7 +35,7 @@
                                     <div class="row">
                                         <% for( let i = 0; i < materiais.length; i++ ) { %>
 
-                                            <% if (materiais[i].video_id != "") { %> 
+                                            <% if (materiais[i].video_id != null) { %> 
                                                 <div class="d-flex b-skills">
                                                     <iframe width="550" height="300" 
                                                         src="https://www.youtube.com/embed/<%= materiais[i].video_id %>"
@@ -68,6 +68,5 @@
         });
     </script>
     <script src="/assets/js/custom.js"></script>
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
 </body>
 </html>

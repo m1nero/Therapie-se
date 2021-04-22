@@ -4,6 +4,18 @@ const Profissional = require('../models/Profissional');
 const Material = require('../models/Material');
 
 module.exports = {
+    async meuPerfil(req, res) {
+        const profissional = await Profissional.findByPk(req.session.profissionalId);
+
+        res.render('profissional/meu_perfil', {
+            page: {
+                name: "Meu Perfil",
+                user: "Profissional"
+            },
+            profissional
+        });
+    },
+
     create(req, res) {
         res.render('profissional/form', {
             page: {
@@ -28,18 +40,6 @@ module.exports = {
         return res.redirect('/login');
     },
 
-    async meuPerfil(req, res) {
-        const profissional = await Profissional.findByPk(req.session.profissionalId);
-
-        res.render('profissional/meu_perfil', {
-            page: {
-                name: "Meu Perfil",
-                user: "Profissional"
-            },
-            profissional
-        });
-    },
-
     async edit(req, res) {
         const profissional = await Profissional.findByPk(req.session.profissionalId);
 
@@ -53,77 +53,38 @@ module.exports = {
     },
 
     async update(req, res) {
-        let { profissionalId } = req.params;
         let { nome, email, crp_cnpj, senha, telefone, endereco, url, cep, cidade, estado } = req.body;
         let senhaHash = await hash(senha, 12);
         senha = senhaHash;
 
         await Profissional.update({
-            nome: req.body.nome,
-            email: req.body.email,
-            crp_cnpj: req.body.crp_cnpj,
+            nome: nome,
+            email: email,
+            crp_cnpj: crp_cnpj,
             senha: senha,
-            telefone: req.body.telefone,
-            endereco: req.body.endereco,
-            url: req.body.url,
-            cep: req.body.cep,
-            cidade: req.body.cidade,
-            estado: req.body.estado
-            },
-            { where: { id: req.params.profissionalId }}
+            telefone: telefone,
+            endereco: endereco,
+            url: url,
+            cep: cep,
+            cidade: cidade,
+            estado: estado
+            }, { where: { id: req.session.profissionalId }}
         )
-
-        return res.redirect(`/profissional/edit/${profissionalId}`);
+        return res.redirect('/meu-perfil');
     },
 
     async delete(req, res) {
-        const { profissionalId } = req.params;
-        const profissional = await Profissional.findByPk(profissionalId);
+        const profissional = await Profissional.findByPk(req.session.profissionalId);
 
         if(!profissional) {
             return res.status(400).json({error: 'Profissional not found'});
         }
 
+        Profissional.destroy({ where: { id: req.session.profissionalId } });
+
         req.session.destroy();
-        Profissional.destroy({
-            where: {id: req.params.profissionalId}
-        })
 
         return res.render('start');
-    },
-
-    async videos(req, res) {
-        const materiais = await Material.findAll({
-            where: {
-                profissional_id: req.session.profissionalId
-            }
-        });
-
-        return res.render('paciente/videos', {
-            page: {
-                name: 'Material de Apoio',
-                user: "Profissional",
-                type: 'videos'
-            },
-            materiais
-        });
-    },
-
-    async imagens(req, res) {
-        const materiais = await Material.findAll({
-            where: {
-                profissional_id: req.session.profissionalId
-            }
-        });
-
-        return res.render('paciente/imagens', {
-            page: {
-                name: 'Material de Apoio',
-                user: "Profissional",
-                type: 'imagens'
-            },
-            materiais
-        });
     },
 
     async textos(req, res) {
@@ -138,6 +99,40 @@ module.exports = {
                 name: 'Material de Apoio',
                 user: "Profissional",
                 type: 'textos'
+            },
+            materiais
+        });
+    },
+
+    async imagens(req, res) {
+        const materiais = await Material.findAll({
+            where: {
+                profissional_id: req.session.profissionalId
+            }
+        });
+
+        return res.render('profissional/material/imagens', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Profissional",
+                type: 'imagens'
+            },
+            materiais
+        });
+    },
+
+    async videos(req, res) {
+        const materiais = await Material.findAll({
+            where: {
+                profissional_id: req.session.profissionalId
+            }
+        });
+
+        return res.render('profissional/material/videos', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Profissional",
+                type: 'videos'
             },
             materiais
         });

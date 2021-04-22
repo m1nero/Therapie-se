@@ -34,7 +34,7 @@
                                     </form>
 
                                     <form id="form-delete" 
-                                        action="//<%= page.type %>/delete/<%= material[0].id %>?_method=DELETE"
+                                        action="/<%= page.type %>/delete/<%= material[0].id %>?_method=DELETE"
                                         method="POST">
                                         <button class="btn btn-danger mt-2" type="submit">Deletar</button>
                                     </form>
@@ -49,7 +49,7 @@
                                         })
                                     </script>
                                 <% } %>
-                            <a href="/texto/edit" class="btn btn-warning mt-2">Voltar</a>
+                            <a href="/<%= page.type %>/edit" class="btn btn-warning mt-2">Voltar</a>
                             </div>
                         </div>
                     </div>
