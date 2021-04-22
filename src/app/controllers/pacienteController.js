@@ -5,7 +5,7 @@ module.exports = {
     async videos(req, res) {
         const materiais = await Material.findAll();
 
-        return res.render('paciente/videos', {
+        return res.render('paciente/material/videos', {
             page: {
                 name: 'Material de Apoio',
                 user: "Paciente",
@@ -18,7 +18,7 @@ module.exports = {
     async imagens(req, res) {
         const materiais = await Material.findAll();
 
-        return res.render('paciente/imagens', {
+        return res.render('paciente/material/imagens', {
             page: {
                 name: 'Material de Apoio',
                 user: "Paciente",
@@ -31,7 +31,7 @@ module.exports = {
     async textos(req, res) {
         const materiais = await Material.findAll();
 
-        return res.render('paciente/textos', {
+        return res.render('paciente/material/textos', {
             page: {
                 name: 'Material de Apoio',
                 user: "Paciente",

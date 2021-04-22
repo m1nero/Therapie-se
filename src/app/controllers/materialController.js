@@ -8,10 +8,36 @@ module.exports = {
         const profissional = await Profissional.findByPk(profissionalId);
         return res.render('material/material_form', {
             page: {
-                name: "Criar"
+                name: "Adicionar"
             },
             profissional
         });
+    },
+
+    async textoAdd(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findByPk(materialId);
+        return res.render('material/material_form', {
+            page: {
+                name: "Adicionar",
+                type:  "texto"
+            },
+            material
+        });
+    },
+
+    async textoStore(req, res) {
+        let { txt_motivacional } = req.body;
+
+        const material = await Material.create({ 
+            url_imagem: null,
+            video_id: null,
+            txt_motivacional: txt_motivacional,
+            profissional_id: req.session.profissionalId
+        });
+
+        return res.redirect('/texto/edit');
     },
 
     async store(req, res) {
@@ -42,6 +68,25 @@ module.exports = {
             },
             material,
             profissional
+        });
+    },
+
+    async textoEdit(req, res) {
+        const { materialId } = req.params;
+
+        const material = await Material.findAll({ 
+            where: {
+                profissional_id: req.session.profissionalId,
+                id: materialId
+            }
+        });
+
+        return res.render('material/material_form', {
+            page: {
+                name: "Editar",
+                type: "texto"
+            },
+            material
         });
     },
 

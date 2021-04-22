@@ -28,22 +28,24 @@ routes.delete('/profissional/delete', onlyUsers, profissionalController.delete);
 
 routes.get('/meu-perfil', onlyUsers, profissionalController.meuPerfil); //pagina edit profissional
 
-//Material Add
-routes.get('/material/add', onlyUsers, materialController.materialAdd); //pagina add material
+//Materiais Get
+routes.get('/texto/edit', onlyUsers, profissionalController.textos);
+routes.get('/imagem/edit', onlyUsers, profissionalController.imagens);
+routes.get('/video/edit', onlyUsers, profissionalController.videos);
 
-//Materiais Editar
-routes.get('/editar/imagens', onlyUsers, profissionalController.imagens);
-routes.get('/editar/textos', onlyUsers, profissionalController.textos);
-routes.get('/editar/videos', onlyUsers, profissionalController.videos);
+//Materiais Add
+routes.get('/texto/add', onlyUsers, materialController.textoAdd); //pagina add texto
+routes.post('/texto/add', onlyUsers, materialController.textoStore); //grava texto
 
-routes.get('/material/list/:profissionalId', onlyUsers, materialController.materialList); //table list material
-routes.post('/material/add/:profissionalId', onlyUsers, materialController.store); //grava material
+//Materiais Editar 
+routes.get('/texto/edit/:materialId', onlyUsers, materialController.textoEdit); //pagina edit texto
+routes.get('/imagem/edit/:materialId', onlyUsers, profissionalController.imagens); //form
+routes.get('/video/edit/:materialId', onlyUsers, profissionalController.videos); //form
 
-routes.get('/material/:materialId/edit/:profissionalId', onlyUsers, materialController.materialEdita); //pagina edit material
-routes.put('/material/:materialId/edit/:profissionalId', onlyUsers, materialController.update); //update material
-routes.delete('/material/delete/:materialId', onlyUsers, materialController.delete); //deleta material
-
-routes.get('/materiais/:profissionalId', onlyUsers, profissionalController.material); //pagina edit material
+//Materiais Delete
+routes.get('/texto/delete/:materialId', onlyUsers, profissionalController.textos); //form
+routes.get('/imagem/delete/:materialId', onlyUsers, profissionalController.imagens); //form
+routes.get('/video/delete/:materialId', onlyUsers, profissionalController.videos); //form
 
 //Pacientes
 routes.get('/textos', pacienteController.textos);

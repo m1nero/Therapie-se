@@ -1,15 +1,16 @@
-<%- include ('../parts/head') %>
+<%- include ('../../parts/head') %>
 
 <body>
     <!--  NAVBAR  -->
     <% if(page.user == "Profissional") { %>
-        <%- include ('../parts/navbar/NavbarProfissional') %>
+        <%- include ('../../parts/navbar/NavbarProfissional') %>
     <% } else { %>
-        <%- include ('../parts/navbar/Navbar') %>
+        <%- include ('../../parts/navbar/Navbar') %>
     <% } %>
 
     <!--  SUBNAVBAR  -->
-    <%- include ('../parts/navbar/subNavbar') %>
+    <%- include ('../../parts/navbar/subNavbar') %>
+
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
 
@@ -18,9 +19,9 @@
 
         <!--  BEGIN SIDEBAR  -->
         <% if(page.user == "Profissional") { %>
-            <%- include ('../parts/sidebarProfissional') %>
+            <%- include ('../../parts/sidebarProfissional') %>
         <% } else { %>
-            <%- include ('../parts/sidebar') %>
+            <%- include ('../../parts/sidebar') %>
         <% } %> 
 
         <!--  BEGIN CONTENT AREA  -->
@@ -30,18 +31,17 @@
                     <div class="col-xl-12 col-lg-6 col-md-5 col-sm-12 layout-top-spacing">
                         <div class="bio layout-spacing ">
                             <div class="widget-content widget-content-area">
-                                <h3 class="">Vídeos</h3>
+                                <h3 class="">Textos Motivacionais</h3>
                                 <div class="bio-skill-box">
                                     <div class="row">
                                         <% for( let i = 0; i < materiais.length; i++ ) { %>
-
-                                            <% if (materiais[i].video_id != "") { %> 
-                                                <div class="d-flex b-skills">
-                                                    <iframe width="550" height="300" 
-                                                        src="https://www.youtube.com/embed/<%= materiais[i].video_id %>"
-                                                        frameborder="0" allow="accelerometer; autoplay;clipboard-write;
-                                                        encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                                    </iframe>
+                                            <% if (materiais[i].txt_motivacional != "") { %> 
+                                                <div class="col-md-6">
+                                                    <div class="jumbotron">
+                                                      <p class="lead mt-3 mb-4">
+                                                        <%= materiais[i].txt_motivacional %>
+                                                    </p>
+                                                    </div>
                                                 </div>
                                             <% } %>
                                         <% } %>

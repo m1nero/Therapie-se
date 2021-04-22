@@ -25,11 +25,14 @@
     </div>
 <% } %>
 
+
 <% if(page.type == "texto") { %>
     <div class="form-row">
         <div class="col-md-12 mb-12">
             <label for="validationTooltip02">Texto Motivacional</label>
-            <textarea class="form-control" name="txt_motivacional" id="validationTooltip02" rows="7" maxlength="500" ><% if(page.name == "Editar") { %><%= material[0].txt_motivacional %>"<% } %></textarea>
+            <input type="text" class="form-control" id="validationTooltip02"
+                 name="txt_motivacional" <% if(page.name == "Editar") { %>
+                value="<%= material[0].txt_motivacional %>" <% } %>>
         </div>
     </div>
 <% } %>

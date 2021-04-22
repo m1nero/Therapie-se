@@ -7,7 +7,7 @@ module.exports = {
     create(req, res) {
         res.render('profissional/form', {
             page: {
-                name: "Criar",
+                name: "Adicionar",
                 user: "Profissional"
             }
         });
@@ -92,39 +92,12 @@ module.exports = {
         return res.render('start');
     },
 
-    async material(req, res) {
-        const { profissionalId } = req.params;
-        const materiais = await Material.findAll();
-        const profissional = await Profissional.findByPk(profissionalId);
-
-        return res.render('paciente/materiais', {
-            page: {
-                name: "Material de Apoio",
-                user: "Profissional"
-            },
-            materiais,
-            profissional
-        });
-    },
-
-    async profissional(req, res) {
-        const { profissionalId } = req.params;
-        const profissionais = await Profissional.findAll();
-        const profissional = await Profissional.findByPk(profissionalId);
-
-        return res.render('paciente/profissionais', {
-            page: {
-                name: "Profissionais e Clínicas",
-                user: "Profissional"
-            },
-            profissionais,
-            profissional
-        });
-    },
-
-    //dnhwe
     async videos(req, res) {
-        const materiais = await Material.findAll();
+        const materiais = await Material.findAll({
+            where: {
+                profissional_id: req.session.profissionalId
+            }
+        });
 
         return res.render('paciente/videos', {
             page: {
@@ -137,7 +110,11 @@ module.exports = {
     },
 
     async imagens(req, res) {
-        const materiais = await Material.findAll();
+        const materiais = await Material.findAll({
+            where: {
+                profissional_id: req.session.profissionalId
+            }
+        });
 
         return res.render('paciente/imagens', {
             page: {
@@ -150,9 +127,13 @@ module.exports = {
     },
 
     async textos(req, res) {
-        const materiais = await Material.findAll();
+        const materiais = await Material.findAll({
+            where: {
+                profissional_id: req.session.profissionalId
+            }
+        });
 
-        return res.render('profissional/textos', {
+        return res.render('profissional/material/textos', {
             page: {
                 name: 'Material de Apoio',
                 user: "Profissional",

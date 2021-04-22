@@ -1,15 +1,15 @@
-<%- include ('../parts/head') %>
+<%- include ('../../parts/head') %>
 
 <body>
     <!--  NAVBAR  -->
     <% if(page.user == "Profissional") { %>
-        <%- include ('../parts/navbar/NavbarProfissional') %>
+        <%- include ('../../parts/navbar/NavbarProfissional') %>
     <% } else { %>
-        <%- include ('../parts/navbar/Navbar') %>
+        <%- include ('../../parts/navbar/Navbar') %>
     <% } %>
 
     <!--  SUBNAVBAR  -->
-    <%- include ('../parts/navbar/subNavbar') %>
+    <%- include ('../../parts/navbar/subNavbar') %>
 
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
@@ -19,9 +19,9 @@
 
         <!--  BEGIN SIDEBAR  -->
         <% if(page.user == "Profissional") { %>
-            <%- include ('../parts/sidebarProfissional') %>
+            <%- include ('../../parts/sidebarProfissional') %>
         <% } else { %>
-            <%- include ('../parts/sidebar') %>
+            <%- include ('../../parts/sidebar') %>
         <% } %> 
 
         <!--  BEGIN CONTENT AREA  -->
@@ -109,24 +109,24 @@
     </div>
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
-    <script src="bootstrap/js/popper.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="/bootstrap/js/popper.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/assets/js/app.js"></script>
     
     <script>
         $(document).ready(function() {
             App.init();
         });
     </script>
-    <script src="assets/js/custom.js"></script>
+    <script src="/assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="plugins/lightbox/photoswipe.min.js"></script>
-    <script src="plugins/lightbox/photoswipe-ui-default.min.js"></script>
-    <script src="plugins/lightbox/custom-photswipe.js"></script>
+    <script src="/plugins/lightbox/photoswipe.min.js"></script>
+    <script src="/plugins/lightbox/photoswipe-ui-default.min.js"></script>
+    <script src="/plugins/lightbox/custom-photswipe.js"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 </html>
