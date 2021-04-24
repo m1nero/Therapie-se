@@ -2,6 +2,16 @@ const Profissional = require('../models/Profissional');
 const Material = require('../models/Material');
 
 module.exports = {
+    async cvv(req, res) {
+        return res.render('paciente/cvv', {
+            page: {
+                name: 'Material de Apoio',
+                user: "Paciente",
+                type: 'cvv'
+            },
+        });
+    },
+
     async videos(req, res) {
         const materiais = await Material.findAll();
 

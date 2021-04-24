@@ -61,5 +61,6 @@ routes.get('/imagens', pacienteController.imagens);
 routes.get('/videos', pacienteController.videos);
 routes.get('/profissionais', pacienteController.profissionais);
 routes.get('/ver-perfil/:profissionalId', pacienteController.verPerfil);
+routes.get('/cvv', pacienteController.cvv);
 
 module.exports = routes;
