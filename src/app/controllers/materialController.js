@@ -202,7 +202,7 @@ module.exports = {
         return res.render('material/material_form', {
             page: {
                 name: "Editar",
-                type: "imagem"
+                type: "video"
             },
             material
         });

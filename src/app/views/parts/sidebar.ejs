@@ -37,10 +37,6 @@
                     <li <% if (page.type == 'textos') { %> class="active" <% } %>>
                         <a href="/textos">Textos</a>
                     </li>
-
-                    <li <% if (page.type == 'cvv') { %> class="active" <% } %>>
-                        <a href="/cvv">CVV</a>
-                    </li>
                 </ul>
             </li>
 
@@ -71,6 +67,41 @@
                     
                     <li <% if (page.name == 'Profissionais e Clínicas') { %> class="active" <% } %>>
                         <a href="/profissionais">Profissionais</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu">
+                <a href="#help" 
+                    <% if (page.name == 'Ajuda') { %> 
+                        data-active="true" 
+                    <% } %> data-toggle="collapse"
+
+                    <% if (page.name == 'Ajuda') { %> 
+                        aria-expanded="true" 
+                    <% } %>  class="dropdown-toggle"
+                >
+
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fas fa-hands-helping"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Ajuda</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+
+                <ul 
+                    <% if (page.name == 'Ajuda') { %>
+                        class="collapse submenu list-unstyled show" 
+                    <% } else { %> class="collapse submenu list-unstyled" <% } %> id="help" data-parent="#accordionExample">
+
+                    <li <% if (page.type == 'protecaoVida') { %> class="active" <% } %> >
+                        <a href="/protecao-a-vida">Proteção à Vida</a>
+                    </li>
+
+                    <li <% if (page.type == 'cvv') { %> class="active" <% } %>>
+                        <a href="/cvv">CVV</a>
                     </li>
                 </ul>
             </li>

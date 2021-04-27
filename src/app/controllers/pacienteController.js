@@ -5,9 +5,19 @@ module.exports = {
     async cvv(req, res) {
         return res.render('paciente/cvv', {
             page: {
-                name: 'Material de Apoio',
+                name: 'Ajuda',
                 user: "Paciente",
                 type: 'cvv'
+            },
+        });
+    },
+
+    async protecaoVida(req, res) {
+        return res.render('paciente/protecao', {
+            page: {
+                name: 'Ajuda',
+                user: "Paciente",
+                type: 'protecaoVida'
             },
         });
     },
