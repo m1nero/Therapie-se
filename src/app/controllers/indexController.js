@@ -12,6 +12,10 @@ module.exports = {
         return res.redirect('/');
     },
 
+    esqueci(req, res) {
+        return res.render('esqueci_senha');
+    },
+
     entrar(req, res) {
         req.session.profissionalId = req.profissional.id;
         let id = req.profissional.id;
