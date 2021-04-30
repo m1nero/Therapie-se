@@ -16,6 +16,7 @@ routes.get('/login', isLoggedRedirectToMeuPerfil, indexController.login); //most
 routes.post('/login', SessionValidator.login, indexController.entrar); //envia email e senha
 routes.post('/logout', indexController.logout); //deleta sesion, logout
 routes.get('/esqueci-senha', indexController.esqueci); //deleta sesion, logout
+routes.post('/esqueci-senha', SessionValidator.esqueciSenha, indexController.esqueciPost); //deleta sesion, logout
 
 //Profissional Add
 routes.get('/registrar', profissionalController.create); //tela cadastra profissional

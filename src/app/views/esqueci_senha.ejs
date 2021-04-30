@@ -23,10 +23,10 @@
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-
                         <h1 class="">Recuperar Senha</h1>
                         <p class="signup-link recovery">Insira seu email para enviarmos as instruções!</p>
-                        <form class="text-left">
+
+                        <form class="text-left" id="esqueci" method="POST" action="/esqueci-senha">
                             <div class="form">
 
                                 <div id="email-field" class="field-wrapper input">
@@ -46,6 +46,13 @@
                                 </div>
                             </div>
                         </form>
+
+                        <script> //Posicionar melhor
+                            const forgot = document.querySelector("#esqueci")
+                            forgot.addEventListener("submit", function (event) {
+                                alert("Email Enviado");
+                            })
+                        </script>
                     </div>
                 </div>
             </div>
