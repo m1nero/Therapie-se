@@ -41,4 +41,3 @@ module.exports = {
         return queryInterface.dropTable('session');
     }
 };
-

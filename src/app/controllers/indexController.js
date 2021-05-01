@@ -73,6 +73,7 @@ module.exports = {
                     name: "Email"
                 }
             });
+
         } catch (error) {
             return res.render('unauthorized', {
                 page: {
