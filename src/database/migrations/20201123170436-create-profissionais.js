@@ -60,6 +60,16 @@ module.exports = {
         allowNull: false,
       },
 
+      reset_token: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
+
+      reset_token_expires: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
+
       created_at: {
           type: Sequelize.DATE,
           allowNull: false,

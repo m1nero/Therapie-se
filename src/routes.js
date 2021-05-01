@@ -15,8 +15,11 @@ routes.get('/', indexController.index); //escolha paciente ou profissional
 routes.get('/login', isLoggedRedirectToMeuPerfil, indexController.login); //mostra tela de login
 routes.post('/login', SessionValidator.login, indexController.entrar); //envia email e senha
 routes.post('/logout', indexController.logout); //deleta sesion, logout
-routes.get('/esqueci-senha', indexController.esqueci); //deleta sesion, logout
-routes.post('/esqueci-senha', SessionValidator.esqueciSenha, indexController.esqueciPost); //deleta sesion, logout
+routes.get('/esqueci-senha', indexController.esqueci); //esqueci senha
+routes.post('/esqueci-senha', SessionValidator.esqueciSenha, indexController.esqueciPost); //encia esqueci senha
+
+routes.get('/reset-senha', indexController.resetForm); //tela de reset
+routes.post('/reset-senha', SessionValidator.reset, indexController.reset); //post reset
 
 //Profissional Add
 routes.get('/registrar', profissionalController.create); //tela cadastra profissional

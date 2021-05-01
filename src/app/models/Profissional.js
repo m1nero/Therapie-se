@@ -13,6 +13,8 @@ class Profissional extends Model {
             cep: DataTypes.STRING,
             cidade: DataTypes.STRING,
             estado: DataTypes.STRING,
+            reset_token: DataTypes.TEXT,
+            reset_token_expires: DataTypes.TEXT,
         },
 
         {

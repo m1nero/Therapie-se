@@ -67,7 +67,9 @@ module.exports = {
             url: url,
             cep: cep,
             cidade: cidade,
-            estado: estado
+            estado: estado,
+            reset_token: "",
+            reset_token_expires: ""
             }, { where: { id: req.session.profissionalId }}
         )
         return res.redirect('/meu-perfil');

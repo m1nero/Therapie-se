@@ -23,38 +23,42 @@
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-                        <h1 class="">Recuperar Senha</h1>
+                        <h1 class="">Redefinir Senha</h1> 
                         <img src="/assets/img/imagem-fundo.png" alt="therapie-se">
-
-                        <p class="signup-link recovery">Insira seu email para enviarmos as instruções!</p>
-
-                        <form class="text-left" id="esqueci" method="POST" action="/esqueci-senha">
+                        <form class="text-left" id="esqueci" method="POST" action="/reset-senha">
                             <div class="form">
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-5">
+                                        <label for="validationTooltip03">Senha</label>
 
-                                <div id="email-field" class="field-wrapper input">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="email">Email</label>
-                                        <a href="/login" class="forgot-pass-link">Voltar</a>
+                                        <input type="password" class="form-control" id="validationTooltip03" placeholder="Senha" name="senha"
+                                            required>
+
+                                        <div class="invalid-tooltip">
+                                            Fill all blanks!
+                                        </div>
                                     </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
-                                    <input id="email" name="email" type="text" class="form-control" value="" placeholder="Email">
+
+                                    <div class="col-md-6 mb-5">
+                                        <label for="validationTooltip03">Repita senha</label>
+
+                                        <input type="password" class="form-control" id="validationTooltip03" placeholder="Digite sua senha novamente"
+                                            name="senhaRepetida" onblur="validar()" required>
+
+                                        <div class="invalid-tooltip">
+                                            Fill all blanks!
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="d-sm-flex justify-content-between">
-
+                                    <input type="hidden" name="token" value="<%= token %>">
                                     <div class="field-wrapper">
-                                        <button type="submit" class="btn btn-primary" value="">Enviar</button>
+                                        <button type="submit" class="btn btn-primary" value="">Nova senha</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
-
-                        <script> //Posicionar melhor
-                            const forgot = document.querySelector("#esqueci")
-                            forgot.addEventListener("submit", function (event) {
-                                alert("Email Enviado, verifique sua caixa de entrada!");
-                            })
-                        </script>
                     </div>
                 </div>
             </div>

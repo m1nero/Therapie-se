@@ -23,6 +23,7 @@
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
+                        <img src="/assets/img/imagem-fundo.png" alt="therapie-se">
 
                         <% if(page.name == "Email") { %>
                             <h1 class="error-title">Email não encontrado!</h1>
@@ -40,7 +41,9 @@
                                     </button>
                                 </a>
                             <% } %>
-                        <% } else { %>
+                        <% } %>
+
+                        <% if(page.name == "Senha") { %>
                             <h1 class="error-title">Credenciais Inválidas!</h1>
 
                             <a href="/login">
@@ -50,6 +53,25 @@
                             </a>
                         <% } %>
 
+                        <% if(page.name == "Token") { %>
+                            <h1 class="error-title">Token Expirado!</h1>
+
+                            <a href="/esqueci-senha">
+                                <button type="button" class="btn btn-primary mt-2">
+                                    Voltar
+                                </button>
+                            </a>
+                        <% } %>
+
+                        <% if(page.name == "Erro") { %>
+                            <h1 class="error-title">Ocorreu um erro inesperado durante a execução da solicitação!</h1>
+
+                            <a href="/login">
+                                <button type="button" class="btn btn-primary mt-2">
+                                    Voltar
+                                </button>
+                            </a>
+                        <% } %>
                     </div>
                 </div>
             </div>
