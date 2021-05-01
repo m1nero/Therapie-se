@@ -34,6 +34,6 @@ $ npm start
 
 [**http://localhost:3000/**](http://localhost:3000/)
 
-:heavy_check_mark: Made by B&B Corporation Dev :tm:
+:heavy_check_mark: Made by B&B Corporation Devs :tm:
 
 #
