@@ -25,6 +25,11 @@ module.exports = {
           allowNull: false,
       },
 
+      bio: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+
       senha: {
           type: Sequelize.STRING,
           allowNull: false,
@@ -39,6 +44,11 @@ module.exports = {
           type: Sequelize.TEXT,
           allowNull: false,
       },
+
+      numero: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
 
       url: {
         type: Sequelize.TEXT,

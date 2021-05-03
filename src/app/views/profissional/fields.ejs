@@ -10,9 +10,6 @@
             <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" name="nome" 
             <% if(page.name == "Editar") { %> value="<%= profissional.nome %>" <% } %> required>
 
-            <div class="valid-tooltip">
-                Looks good!
-            </div>
         </div>
 
         <div class="col-md-4 mb-5">
@@ -29,17 +26,34 @@
             <div class="input-group">
                 <input type="text" class="form-control" id="validationTooltip02" placeholder="CRP/CNPJ"
                     aria-describedby="validationTooltipUsernamePrepend" name="crp_cnpj" 
-                    <% if(page.name == "Editar") { %> value="<%= profissional.crp_cnpj %>" <% } %> maxlength='14' required>
+                    <% if(page.name == "Editar") { %> value="<%= profissional.crp_cnpj %>" <% } %> maxlength="14" required>
             </div>
         </div>
     </div>
 
     <div class="form-row">
-        <div class="col-md-6 mb-5">
-            <label for="validationTooltip02">Endereço</label>
-            <input type="text" class="form-control" id="validationTooltip03"
-                placeholder="Rua ABC nº X" name="endereco" 
+        <div class="col-md-12 mb-5">
+            <label for="validationTooltip03">Bio</label>
+
+            <textarea class="form-control" name="bio" id="validationTooltip03" rows="6" maxlength="400" placeholder="Sobre mim"
+            <% if(page.name == "Editar") { %> value="<%= profissional.bio %>" <% } %> required></textarea>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltip04">Endereço</label>
+            <input type="text" class="form-control" id="validationTooltip04"
+                placeholder="Rua" name="endereco" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.endereco %>" <% } %> required>
+
+        </div>
+
+        <div class="col-md-2 mb-5">
+            <label for="validationTooltip05">Numero</label>
+            <input type="text" class="form-control" id="validationTooltip05"
+                placeholder="nº" name="numero" 
+                <% if(page.name == "Editar") { %> value="<%= profissional.numero %>" <% } %> required>
 
             <div class="valid-tooltip">
                 Looks good!
@@ -47,8 +61,8 @@
         </div>
 
         <div class="col-md-3 mb-5">
-            <label for="validationTooltip02">Cidade</label>
-            <input type="text" class="form-control" id="validationTooltip03"
+            <label for="validationTooltip06">Cidade</label>
+            <input type="text" class="form-control" id="validationTooltip06"
                 placeholder="Cidade" name="cidade" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.cidade %>" <% } %> required>
 
@@ -58,48 +72,46 @@
         </div>
 
         <div class="col-md-3 mb-5">
-            <label for="validationTooltip02">Estado</label>
-            <input type="text" class="form-control" id="validationTooltip04"
+            <label for="validationTooltip07">Estado</label>
+            <input type="text" class="form-control" id="validationTooltip07"
                 placeholder="Estado" name="estado"
-                <% if(page.name == "Editar") { %> value="<%= profissional.estado %>" <% } %>  maxlength='2' required>
+                <% if(page.name == "Editar") { %> value="<%= profissional.estado %>" <% } %>  maxlength="2" required>
 
             <div class="valid-tooltip">
                 Looks good!
             </div>
         </div>
     </div>
-
 
     <div class="form-row">
         <div class="col-md-6 mb-5">
-            <label for="validationTooltip02">CEP</label>
-            <input type="text" class="form-control" id="validationTooltip05"
-                placeholder="XXXXX-XXX" name="cep" 
+            <label for="validationTooltip08">CEP</label>
+            <input type="text" class="form-control" id="validationTooltip08"
+                placeholder="XXXXX-XXX" name="cep" maxlength='8'
                 <% if(page.name == "Editar") { %> value="<%= profissional.cep %>" <% } %>
-                required  maxlength='8'>
-    
+                onblur="pesquisacep()" required>
+
             <div class="valid-tooltip">
                 Looks good!
             </div>
         </div>
 
         <div class="col-md-6 mb-5">
-            <label for="validationTooltip02">Telefone</label>
+            <label for="validationTooltip09">Telefone</label>
             <input type="text" class="form-control" id="6"
                 placeholder="(XX) XXXX-XXXX" name="telefone" 
-                <% if(page.name == "Editar") { %> value="<%= profissional.telefone %>" <% } %> required>
-    
+                <% if(page.name == "Editar") { %> value="<%= profissional.telefone %>" <% } %> maxlength="13" required>
+
             <div class="valid-tooltip">
                 Looks good!
             </div>
         </div>
     </div>
-
 
     <div class="form-row">
         <div class="col-md-12 mb-5">
-            <label for="validationTooltip02">Url Foto de Perfil</label>
-            <input type="text" class="form-control" id="validationTooltip07"
+            <label for="validationTooltip10">Url Foto de Perfil</label>
+            <input type="text" class="form-control" id="validationTooltip10"
                 placeholder="https://" name="url" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.url %>" <% } %> required>
         </div>
@@ -107,24 +119,24 @@
 
     <div class="form-row">
         <div class="col-md-6 mb-5">
-            <label for="validationTooltip03">Senha</label>
+            <label for="validationTooltip11">Senha</label>
 
-            <input type="password" class="form-control" id="validationTooltip03" placeholder="Senha" name="senha"
+            <input type="password" class="form-control" id="validationTooltip11" placeholder="Senha" name="senha"
                 required>
 
             <div class="invalid-tooltip">
-                Fill all blanks!
+                Preencha todos os campos!
             </div>
         </div>
 
         <div class="col-md-6 mb-5">
-            <label for="validationTooltip03">Repita senha</label>
+            <label for="validationTooltip12">Repita senha</label>
 
-            <input type="password" class="form-control" id="validationTooltip03" placeholder="Digite sua senha novamente"
+            <input type="password" class="form-control" id="validationTooltip12" placeholder="Digite sua senha novamente"
                 name="senhaRepetida" onblur="validar()" required>
 
             <div class="invalid-tooltip">
-                Fill all blanks!
+                Preencha todos os campos!
             </div>
         </div>
     </div>

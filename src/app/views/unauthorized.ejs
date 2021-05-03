@@ -63,6 +63,16 @@
                             </a>
                         <% } %>
 
+                        <% if(page.name == "Ja cadastrado") { %>
+                            <h1 class="error-title">Email já cadastrado!</h1>
+
+                            <a href="/registrar-senha">
+                                <button type="button" class="btn btn-primary mt-2">
+                                    Voltar para cadastro
+                                </button>
+                            </a>
+                        <% } %>
+
                         <% if(page.name == "Erro") { %>
                             <h1 class="error-title">Ocorreu um erro inesperado durante a execução da solicitação!</h1>
 

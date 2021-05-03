@@ -26,15 +26,19 @@ module.exports = {
     },
 
     async store(req, res) {
-        let { nome, email, crp_cnpj, senha, telefone, endereco, url, cep, cidade, estado } = req.body;
+        let { nome, email, bio, crp_cnpj, senha, telefone, endereco, numero, url, cep, cidade, estado } = req.body;
         let senhaHash = await hash(senha, 12);
         senha = senhaHash;
 
-        var exist = await profissionalExists(email, crp_cnpj);
+        var exist = await profissionalExists(email);
         if (exist == 0) {
-            await Profissional.create({ nome, email, crp_cnpj, senha, telefone, endereco, url, cep, cidade, estado });
+            await Profissional.create({ nome, email, bio, crp_cnpj, senha, telefone, endereco, numero, url, cep, cidade, estado });
         } else {
-            return res.json('Email ja cadastrado');
+            return res.render('unauthorized', {
+                page: {
+                    name: "Ja cadastrado"
+                }
+            });
         }
 
         return res.redirect('/login');
@@ -53,17 +57,19 @@ module.exports = {
     },
 
     async update(req, res) {
-        let { nome, email, crp_cnpj, senha, telefone, endereco, url, cep, cidade, estado } = req.body;
+        let { nome, email, bio, crp_cnpj, senha, telefone, endereco, numero, url, cep, cidade, estado } = req.body;
         let senhaHash = await hash(senha, 12);
         senha = senhaHash;
 
         await Profissional.update({
             nome: nome,
             email: email,
+            bio, bio,
             crp_cnpj: crp_cnpj,
             senha: senha,
             telefone: telefone,
             endereco: endereco,
+            numero, numero,
             url: url,
             cep: cep,
             cidade: cidade,

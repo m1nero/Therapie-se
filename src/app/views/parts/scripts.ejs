@@ -25,7 +25,49 @@
             form.senha.focus();
             return false
         }
-    }
+    };
+
+    function limpa_formulário_cep() {
+        document.getElementsByName('endereco').value=("");
+        document.getElementsByName('cidade').value=("");
+        document.getElementsByName('estado').value=("");
+    };
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            document.getElementsByName('endereco').value=(conteudo.logradouro);
+            document.getElementsByName('cidade').value=(conteudo.localidade);
+            document.getElementsByName('estado').value=(conteudo.uf);
+        }
+        else {
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    };
+
+    function pesquisacep() {
+        var cepForm = form.cep.value
+        var cep = cepForm.replace(/\D/g, '');
+
+        if (cep != "") {
+            var validacep = /^[0-9]{8}$/;
+
+            if(validacep.test(cep)) {
+                var script = document.createElement('script');
+
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                document.body.appendChild(script);
+            }
+            else {
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        }
+        else {
+            limpa_formulário_cep();
+        }
+    };
 </script>
 
 <!-- Forms -->
