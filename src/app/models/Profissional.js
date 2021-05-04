@@ -10,6 +10,7 @@ class Profissional extends Model {
             telefone: DataTypes.STRING,
             endereco: DataTypes.TEXT,
             numero: DataTypes.INTEGER,
+            bio: DataTypes.TEXT,
             url: DataTypes.TEXT,
             cep: DataTypes.STRING,
             cidade: DataTypes.STRING,
