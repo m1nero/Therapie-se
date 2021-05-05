@@ -1,5 +1,5 @@
 <div class="form-row">
-    <h4><%= page.name %> <%= page.type %> motivacional</h4>
+    <h4> <% if(page.name == "EditarM") { %> Editar <% } else { %> Adicionar <% } %> <%= page.type %> motivacional</h4>
 </div>
 
 <% if(page.type == "imagem") { %>
@@ -7,7 +7,7 @@
         <div class="col-md-12 mb-12">
             <label for="validationTooltip02">URL Imagem</label>
             <input type="url" class="form-control" id="validationTooltip02"
-                placeholder="http://" name="url_imagem" <% if(page.name == "Editar") { %>
+                placeholder="http://" name="url_imagem" <% if(page.name == "EditarM") { %>
                 value="<%= material[0].url_imagem %>" <% } %>>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-md-12 mb-12">
             <label for="validationTooltip02">Id Video Youtube</label>
             <input type="text" class="form-control" id="validationTooltip02"
-                name="video_id" <% if(page.name == "Editar") { %>
+                name="video_id" <% if(page.name == "EditarM") { %>
                 value="<%= material[0].video_id %>" <% } %>>
         </div>
     </div>
@@ -29,13 +29,13 @@
     <div class="form-row">
         <div class="col-md-12 mb-12">
             <label for="validationTooltip02">Texto Motivacional</label>
-            <textarea class="form-control" name="txt_motivacional" id="validationTooltip02" rows="7" maxlength="500" ><% if(page.name == "Editar") { %><%= material[0].txt_motivacional %><% } %></textarea>
+            <textarea class="form-control" name="txt_motivacional" id="validationTooltip02" rows="7" maxlength="500" ><% if(page.name == "EditarMS") { %><%= material[0].txt_motivacional %><% } %></textarea>
         </div>
     </div>
 <% } %>
 
 
-<% if(page.name == "Editar") { %>
+<% if(page.name == "EditarM") { %>
     <button class="btn btn-secondary mt-2" type="submit">Editar</button>
 <% } %>
 

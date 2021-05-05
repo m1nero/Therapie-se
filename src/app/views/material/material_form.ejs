@@ -26,7 +26,7 @@
                                     </form>
                                 <% } %>
 
-                                <%if(page.name == "Editar") { %>
+                                <%if(page.name == "EditarM") { %>
                                     <form name="form" class="needs-validation" method="post"
                                         action="/<%= page.type %>/edit/<%= material[0].id %>?_method=PUT"
                                         novalidate action="javascript:void(0);">
@@ -49,7 +49,6 @@
                                         })
                                     </script>
                                 <% } %>
-                            <a href="/<%= page.type %>/edit" class="btn btn-warning mt-2">Voltar</a>
                             </div>
                         </div>
                     </div>

@@ -41,7 +41,7 @@ module.exports = {
 
         return res.render('material/material_form', {
             page: {
-                name: "Editar",
+                name: "EditarM",
                 type: "texto"
             },
             material
@@ -121,7 +121,7 @@ module.exports = {
 
         return res.render('material/material_form', {
             page: {
-                name: "Editar",
+                name: "EditarM",
                 type: "imagem"
             },
             material
@@ -201,7 +201,7 @@ module.exports = {
 
         return res.render('material/material_form', {
             page: {
-                name: "Editar",
+                name: "EditarM",
                 type: "video"
             },
             material

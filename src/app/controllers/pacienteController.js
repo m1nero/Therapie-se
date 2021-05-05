@@ -29,7 +29,7 @@ module.exports = {
             page: {
                 name: 'Material de Apoio',
                 user: "Paciente",
-                type: 'videos'
+                type: 'video'
             },
             materiais
         });
@@ -42,7 +42,7 @@ module.exports = {
             page: {
                 name: 'Material de Apoio',
                 user: "Paciente",
-                type: 'imagens'
+                type: 'imagem'
             },
             materiais
         });
@@ -55,7 +55,7 @@ module.exports = {
             page: {
                 name: 'Material de Apoio',
                 user: "Paciente",
-                type: 'textos'
+                type: 'texto'
             },
             materiais
         });

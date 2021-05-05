@@ -3,11 +3,11 @@
         <ul class="list-unstyled menu-categories" id="accordionExample">
             <li class="menu">
                 <a href="#dashboard" 
-                    <% if (page.name == 'Material de Apoio') { %> 
+                    <% if (page.name == 'Material de Apoio' || page.name == 'EditarM' || page.name == 'Adicionar') { %> 
                         data-active="true" 
                     <% } %> data-toggle="collapse"
 
-                    <% if (page.name == 'Material de Apoio') { %> 
+                    <% if (page.name == 'Material de Apoio' || page.name == 'EditarM' || page.name == 'Adicionar') { %> 
                         aria-expanded="true" 
                     <% } %>  class="dropdown-toggle"
                 >
@@ -22,19 +22,19 @@
                 </a>
 
                 <ul 
-                    <% if (page.name == 'Material de Apoio') { %>
+                    <% if (page.name == 'Material de Apoio' || page.name == 'EditarM' || page.name == 'Adicionar') { %>
                         class="collapse submenu list-unstyled show" 
                     <% } else { %> class="collapse submenu list-unstyled" <% } %> id="dashboard" data-parent="#accordionExample">
 
-                    <li <% if (page.type == 'imagens') { %> class="active" <% } %> >
+                    <li <% if (page.type == 'imagem') { %> class="active" <% } %> >
                         <a href="/imagem/edit">Editar Imagens</a>
                     </li>
 
-                    <li <% if (page.type == 'videos') { %> class="active" <% } %>>
+                    <li <% if (page.type == 'video') { %> class="active" <% } %>>
                         <a href="/video/edit">Editar Vídeos</a>
                     </li>
 
-                    <li <% if (page.type == 'textos') { %> class="active" <% } %>>
+                    <li <% if (page.type == 'texto') { %> class="active" <% } %>>
                         <a href="/texto/edit">Editar Textos</a>
                     </li>
                 </ul>

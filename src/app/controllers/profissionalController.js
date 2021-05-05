@@ -106,7 +106,7 @@ module.exports = {
             page: {
                 name: 'Material de Apoio',
                 user: "Profissional",
-                type: 'textos'
+                type: 'texto'
             },
             materiais
         });
@@ -123,7 +123,7 @@ module.exports = {
             page: {
                 name: 'Material de Apoio',
                 user: "Profissional",
-                type: 'imagens'
+                type: 'imagem'
             },
             materiais
         });
@@ -140,7 +140,7 @@ module.exports = {
             page: {
                 name: 'Material de Apoio',
                 user: "Profissional",
-                type: 'videos'
+                type: 'video'
             },
             materiais
         });
