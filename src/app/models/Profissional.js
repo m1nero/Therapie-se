@@ -5,7 +5,8 @@ class Profissional extends Model {
         super.init({
             nome: DataTypes.STRING,
             email: DataTypes.STRING,
-            crp_cnpj: DataTypes.STRING,
+            crp: DataTypes.STRING,
+            cnpj: DataTypes.STRING,
             senha: DataTypes.STRING,
             telefone: DataTypes.STRING,
             endereco: DataTypes.TEXT,

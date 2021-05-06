@@ -20,9 +20,14 @@ module.exports = {
           allowNull: false,
       },
 
-      crp_cnpj: {
+      crp: {
           type: Sequelize.STRING,
           allowNull: false,
+      },
+
+      cnpj: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
 
       bio: {

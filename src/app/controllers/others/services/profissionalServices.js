@@ -1,10 +1,11 @@
 const Profissional = require('../../../models/Profissional')
 
 module.exports = {
-    async profissionalExists(email) {
+    async profissionalExists(email, crp) {
         var profissional = await Profissional.findOne({ 
             where: { 
-                email: email
+                email: email,
+                crp: crp
             }
         });
         if(!profissional) {

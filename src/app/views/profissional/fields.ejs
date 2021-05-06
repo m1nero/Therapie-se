@@ -1,19 +1,19 @@
 <div class="form">
     <div class="form-row">
-        <h4><%= page.name %> Profissional</h4>
+        <h4><%= page.name %> Profissional e Clínica</h4>
     </div>
 
     <div class="form-row">
-        <div class="col-md-4 mb-5">
-            <label for="validationTooltip01">Nome</label>
+        <div class="col-md-5 mb-5">
+            <label for="validationTooltip01">Nome:*</label>
 
             <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" name="nome" 
             <% if(page.name == "Editar") { %> value="<%= profissional.nome %>" <% } %> required>
 
         </div>
 
-        <div class="col-md-4 mb-5">
-            <label for="validationTooltipUsername">Email</label>
+        <div class="col-md-5 mb-5">
+            <label for="validationTooltipUsername">Email:*</label>
             <div class="input-group">
                 <input type="email" class="form-control" id="validationTooltipUsername" placeholder="Email"
                     aria-describedby="validationTooltipUsernamePrepend" name="email" 
@@ -21,19 +21,19 @@
             </div>
         </div>
 
-        <div class="col-md-4 mb-5">
-            <label for="validationTooltipUsername">CRP/CNPJ</label>
+        <div class="col-md-2 mb-5">
+            <label for="validationTooltipUsername">CRP:*</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="validationTooltip02" placeholder="CRP/CNPJ"
-                    aria-describedby="validationTooltipUsernamePrepend" name="crp_cnpj" 
-                    <% if(page.name == "Editar") { %> value="<%= profissional.crp_cnpj %>" <% } %> maxlength="14" required>
+                <input type="text" class="form-control" id="validationTooltip02" placeholder="CRP"
+                    aria-describedby="validationTooltipUsernamePrepend" name="crp"
+                    <% if(page.name == "Editar") { %> value="<%= profissional.crp %>" <% } %> maxlength="7" required>
             </div>
         </div>
     </div>
 
     <div class="form-row">
         <div class="col-md-12 mb-5">
-            <label for="validationTooltip03">Bio</label>
+            <label for="validationTooltip03">Bio:*</label>
 
             <textarea class="form-control" name="bio" id="validationTooltip03" rows="6" maxlength="400" placeholder="Sobre mim"
             <% if(page.name == "Editar") { %> value="<%= profissional.bio %>" <% } %> required></textarea>
@@ -42,7 +42,7 @@
 
     <div class="form-row">
         <div class="col-md-4 mb-5">
-            <label for="validationTooltip04">Endereço</label>
+            <label for="validationTooltip04">Endereço:*</label>
             <input type="text" class="form-control" id="validationTooltip04"
                 placeholder="Rua" name="endereco" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.endereco %>" <% } %> required>
@@ -50,67 +50,76 @@
         </div>
 
         <div class="col-md-2 mb-5">
-            <label for="validationTooltip05">Numero</label>
+            <label for="validationTooltip05">Número:*</label>
             <input type="text" class="form-control" id="validationTooltip05"
                 placeholder="nº" name="numero" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.numero %>" <% } %> required>
 
             <div class="valid-tooltip">
-                Looks good!
+                Ok
             </div>
         </div>
 
-        <div class="col-md-3 mb-5">
-            <label for="validationTooltip06">Cidade</label>
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltip06">Cidade:*</label>
             <input type="text" class="form-control" id="validationTooltip06"
                 placeholder="Cidade" name="cidade" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.cidade %>" <% } %> required>
 
             <div class="valid-tooltip">
-                Looks good!
+                Ok
             </div>
         </div>
 
-        <div class="col-md-3 mb-5">
-            <label for="validationTooltip07">Estado</label>
+        <div class="col-md-2 mb-5">
+            <label for="validationTooltip07">Estado:*</label>
             <input type="text" class="form-control" id="validationTooltip07"
                 placeholder="Estado" name="estado"
                 <% if(page.name == "Editar") { %> value="<%= profissional.estado %>" <% } %>  maxlength="2" required>
 
             <div class="valid-tooltip">
-                Looks good!
+                Ok
             </div>
         </div>
     </div>
 
     <div class="form-row">
-        <div class="col-md-6 mb-5">
-            <label for="validationTooltip08">CEP</label>
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltip08">CEP:*</label>
             <input type="text" class="form-control" id="validationTooltip08"
                 placeholder="XXXXX-XXX" name="cep" maxlength='8'
                 <% if(page.name == "Editar") { %> value="<%= profissional.cep %>" <% } %>
                 required>
 
             <div class="valid-tooltip">
-                Looks good!
+                Ok
             </div>
         </div>
 
-        <div class="col-md-6 mb-5">
-            <label for="validationTooltip09">Telefone</label>
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltip09">Telefone:*</label>
             <input type="text" class="form-control" id="6"
                 placeholder="(XX) XXXX-XXXX" name="telefone" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.telefone %>" <% } %> maxlength="13" required>
 
             <div class="valid-tooltip">
-                Looks good!
+                Ok
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-5">
+            <label for="validationTooltipUsername">CNPJ:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="validationTooltip13" placeholder="CNPJ"
+                    aria-describedby="validationTooltipUsernamePrepend" name="cnpj" 
+                    <% if(page.name == "Editar") { %> value="<%= profissional.cnpj %>" <% } %> maxlength="14">
             </div>
         </div>
     </div>
 
     <div class="form-row">
         <div class="col-md-12 mb-5">
-            <label for="validationTooltip10">Url Foto de Perfil</label>
+            <label for="validationTooltip10">Url Foto de Perfil:*</label>
             <input type="text" class="form-control" id="validationTooltip10"
                 placeholder="https://" name="url" 
                 <% if(page.name == "Editar") { %> value="<%= profissional.url %>" <% } %> required>
@@ -119,7 +128,7 @@
 
     <div class="form-row">
         <div class="col-md-6 mb-5">
-            <label for="validationTooltip11">Senha</label>
+            <label for="validationTooltip11">Senha:*</label>
 
             <input type="password" class="form-control" id="validationTooltip11" placeholder="Senha" name="senha"
                 required>
@@ -130,7 +139,7 @@
         </div>
 
         <div class="col-md-6 mb-5">
-            <label for="validationTooltip12">Repita senha</label>
+            <label for="validationTooltip12">Repita senha:*</label>
 
             <input type="password" class="form-control" id="validationTooltip12" placeholder="Digite sua senha novamente"
                 name="senhaRepetida" onblur="validar()" required>

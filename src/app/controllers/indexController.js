@@ -33,7 +33,8 @@ module.exports = {
             await Profissional.update({
                 nome: profissional.nome,
                 email: profissional.email,
-                crp_cnpj: profissional.crp_cnpj,
+                crp: profissional.crp,
+                cnpj: profissional.cnpj,
                 senha: profissional.senha,
                 telefone: profissional.telefone,
                 endereco: profissional.endereco,
