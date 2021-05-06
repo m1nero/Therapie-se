@@ -1,3 +1,4 @@
+const getYouTubeID = require('get-youtube-id');
 const Material = require('../models/Material');
 const Profissional = require('../models/Profissional');
 
@@ -179,9 +180,11 @@ module.exports = {
     async videoStore(req, res) {
         let { video_id } = req.body;
 
+        let id = getYouTubeID(video_id);
+
         const material = await Material.create({ 
             url_imagem: null,
-            video_id: video_id,
+            video_id: id,
             txt_motivacional: null,
             profissional_id: req.session.profissionalId
         });
@@ -212,9 +215,11 @@ module.exports = {
         const { materialId } = req.params;
         let { video_id } = req.body;
 
+        let id = getYouTubeID(video_id);
+
         await Material.update({
             url_imagem: null,
-            video_id: video_id,
+            video_id: id,
             txt_motivacional: null,
         }, { where: { 
                 id: materialId,
@@ -222,7 +227,7 @@ module.exports = {
            }}
         );
 
-        return res.redirect('/imagem/edit');
+        return res.redirect('/video/edit');
     },
 
     async videoDelete(req, res) {
