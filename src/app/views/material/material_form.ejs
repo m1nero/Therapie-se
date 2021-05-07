@@ -38,7 +38,7 @@
                                         method="POST">
                                         <button class="btn btn-danger mt-2" type="submit">Deletar</button>
                                     </form>
-    
+
                                     <script> //Posicionar melhor
                                         const formDelete = document.querySelector("#form-delete")
                                         formDelete.addEventListener("submit", function (event) {
@@ -49,6 +49,7 @@
                                         })
                                     </script>
                                 <% } %>
+                                <a href="/<%= page.type %>/edit/" class="btn btn-warning mt-2">Voltar</a>
                             </div>
                         </div>
                     </div>

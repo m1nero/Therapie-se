@@ -20,7 +20,7 @@
                             </li>
 
                             <li class="breadcrumb-item active" aria-current="page">
-                                <span><%= page.name %></span>
+                                <span><% if (page.name != "EditarM") { %> <%= page.name %> <% } else { %> Editar <% } %></span>
                             </li>
                         </ol>
                     </nav>

@@ -76,7 +76,7 @@ module.exports = {
     async verPerfil(req, res){
         const { profissionalId } = req.params;
         const profissional = await Profissional.findByPk(profissionalId);
-        console.log(profissional)
+
         return res.render('paciente/ver_perfil', {
             page: {
                 name: 'Profissionais e Clínicas',
