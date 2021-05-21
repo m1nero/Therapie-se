@@ -47,3 +47,10 @@ $ npm start
 #
 
 npm i sequelize
+
+com o node e o mysql intalado na sua maquina rode o comando npm 
+$ npm install -g nodemon
+$ npm install
+$ npm i sequelize
+
+faça o import do banco de dados e depois execute o comando $ npm start, a aplicação esta rodando em localhost:3000
