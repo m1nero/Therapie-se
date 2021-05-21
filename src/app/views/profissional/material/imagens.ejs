@@ -48,10 +48,12 @@
                                 <div class="row">
                                   <% for( let i = 0; i < materiais.length; i++ ) { %>
                                     <% if (materiais[i].url_imagem != null) { %> 
-                                        <div class="jumbotron">
-                                            <a href="/imagem/edit/<%= materiais[i].id %>">
-                                                <img src="<%= materiais[i].url_imagem %>" alt="image-gallery">
-                                            </a>
+                                        <div class="col-md-6">
+                                            <div class="jumbotron">
+                                                <a href="/imagem/edit/<%= materiais[i].id %>">
+                                                    <img src="<%= materiais[i].url_imagem %>" width="100%" height="100%" alt="image-gallery">
+                                                </a>
+                                            </div>
                                         </div>
                                     <% } %>
                                   <% } %>
