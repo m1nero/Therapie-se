@@ -7,7 +7,9 @@ Esse arquivo tem a finalidade de mostrar passo-a-passo o processo de rodar o **T
 $ git clone https://github.com/m1nero/Therapie-se.git
 ```
 
-## 2) Após abrir o projeto no editor de codigo de sua preferência, instale o nodemon e a node_modules usando os segintes comando: 🖥️
+## 2) Após abrir o projeto no editor de codigo de sua preferência, instale o nodemon, node_modules e o SequelizeORM usando os segintes comando: 🖥️
+
+Com o Node.js e MySql já instalado utilize os comandos abaixo
 
 Nodemon
 ```bash
@@ -19,8 +21,12 @@ Node Modules
 $ npm install
 ```
 
+SequelizeORM
+```bash
+$ npm i sequelize
+```
 
-## 3) Crie o banco de dados e execute as migrations utilizando os seguintes comandos: 💾
+## 3) Importe o banco de dados ou crie e execute as migrations utilizando os seguintes comandos: 💾
 
 Para criar o banco dados
 ```bash
@@ -45,12 +51,3 @@ $ npm start
 :heavy_check_mark: Made by B&B Corporation Devs :tm:
 
 #
-
-npm i sequelize
-
-com o node e o mysql intalado na sua maquina rode o comando npm 
-$ npm install -g nodemon
-$ npm install
-$ npm i sequelize
-
-faça o import do banco de dados e depois execute o comando $ npm start, a aplicação esta rodando em localhost:3000
